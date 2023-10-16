@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   border: 0;
-  box-sizing: 0;
+  /*box-sizing: 0;*/
 }
 
 a {
@@ -25,8 +25,10 @@ nav {
 
 }
 
-.logo-menu {
+.logo-menu-container {
   overflow: hidden;
+
+
 }
 
 .dropdown-content {
@@ -34,7 +36,7 @@ nav {
 
   display: none;
   position: absolute;
-  width: 100%;
+  width: auto;
   z-index: 1;
 
   /*overflow: auto;*/
@@ -68,10 +70,10 @@ nav {
 
 .dropdown-content {
   display: none;
-  background-color: #555555;
+  background-color: white;
 }
 
-.logo-menu:hover .dropdown-content {
+.logo-menu-container:hover .dropdown-content {
   display: block;
 }
 
@@ -79,6 +81,32 @@ nav {
   display: block;
 
 }
+.www {
+  display: flex;
+position: relative;
+
+/*margin-top: 20px;*/
+/*margin-bottom: 2px;*/
+}
+
+.mini-logo-container {
+position: absolute;
+  left: 50px ;
+  /*top: 0;*/
+
+
+}
+ .mini-logo-container img {
+   width: 50px;
+   height: 20px;
+   padding-top: 25%;
+   padding-left: 10%;
+   background-size: contain;
+   background-repeat: no-repeat;
+   background-position: center;
+ }
+
+
 
 .search-container {
   display: flex;
