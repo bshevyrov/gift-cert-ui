@@ -1,6 +1,6 @@
 :root {
   --nav-height: 50px;
-  --left-padding: 100px;
+  --left-padding: 200px;
 }
 
 * {
@@ -27,7 +27,7 @@ nav {
   width: 100%;
   justify-content: space-between;
   background-color: #ffffff;
-height: var(--nav-height);
+  height: var(--nav-height);
 }
 
 .logo-menu-container {
@@ -72,6 +72,7 @@ height: var(--nav-height);
   display: block;
 
 }
+
 .www {
   display: flex;
   position: relative;
@@ -82,11 +83,12 @@ height: var(--nav-height);
 
 .mini-logo-container {
   position: absolute;
-  left: 50px ;
+  left: 50px;
   /*top: 0;*/
 
 
 }
+
 .mini-logo-container img {
   width: 50px;
   height: 20px;
@@ -96,7 +98,6 @@ height: var(--nav-height);
   background-repeat: no-repeat;
   background-position: center;
 }
-
 
 
 .search-container {
@@ -128,18 +129,20 @@ height: var(--nav-height);
   outline: 1px solid #d8d8d8;
 
 }
+
 .sign-in-container {
   display: flex;
   align-self: center;
 
 }
+
 .sign-in-container span {
   padding-right: 15px;
 }
+
 .sign-in-container .material-icons-outlined {
   color: #747474;
 }
-
 
 
 body {
@@ -161,8 +164,15 @@ body {
   left: 0;
   width: 100%;
   height: var(--nav-height);
+  padding-left: var(--left-padding);
+  display: flex;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  font-size: medium;
 }
 
-.input-container {
 
+.input-container {
+  padding-left: var(--left-padding);
 }
