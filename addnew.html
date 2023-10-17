@@ -55,7 +55,25 @@ shopping_cart
 <main>
   <span class = "page-name">Add New Coupon</span>
   <div class="input-container">
-
+    <form>
+<div class="left-input">
+  <label for="company">Company</label>
+  <input id="company" type="text">
+  <label for="category">Category</label>
+  <select id="category" required>
+    <option  value="" disabled selected="selected">Category name</option>
+    <option value="cat1">Cat 1</option>
+    <option value="cat2">Cat 2</option>
+    <option value="cat3">Cat 3</option>
+  </select>
+  <label for="valid">Valid to</label>
+  <input id="valid" type="date">
+  <label for="price">Price</label>
+  <input id="price" type="number">
+  <label for="images">Images</label>
+  <input id="images" type="file" accept="image/*"></div>
+<div class="right-input"></div>
+    </form>
   </div>
 </main>
 </body>
