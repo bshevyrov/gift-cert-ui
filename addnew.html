@@ -53,7 +53,9 @@ shopping_cart
   </div>
 </nav>
 <main>
-  <div class="page-name"><p>Add New Coupon</p></div>
+  <div class="page-name">
+    <p>Add New Coupon</p>
+  </div>
   <div class="input-container">
     <form>
       <div class="left-input">
@@ -74,8 +76,8 @@ shopping_cart
 
         <div class="input-images">
           <span class="material-icons-outlined">
-filter
-</span>
+            filter
+          </span>
           <input id="images" type="file">
         </div>
       </div>
@@ -86,11 +88,13 @@ filter
         <label for="item-name">Item Name</label>
         <input id="item-name" type="text">
         <label for="short-descr">Short description</label>
-        <input id="short-descr" type="text">
+        <textarea id="short-descr" type="text"></textarea>
         <label for="long-descr">Long description</label>
-        <input id="long-descr" type="text">
-        <button class="back-btn" type="button">Back</button>
-        <button class="back-btn" type="submit">Save</button>
+        <textarea id="long-descr" type="text" ></textarea>
+        <div class="form-buttons">
+          <button class="back-btn" type="button">Back</button>
+          <button class="submit-btn" type="submit">Save</button>
+        </div>
       </div>
     </form>
 
