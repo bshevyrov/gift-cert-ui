@@ -172,24 +172,142 @@ body {
   position: relative;
   left: var(--left-padding);
 }
- .item-container {
-   position: absolute;
-   top: 150px;
-   /*padding-top: 100px;*/
-   padding-left: var(--left-padding);
-   display: flex;
-   flex-direction: row;
 
- }
+.item-container {
+  position: absolute;
+  top: 150px;
+  /*padding-top: 100px;*/
+  padding-left: var(--left-padding);
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+}
+
+.item-container-content {
+  display: flex;
+}
+
+.item-image-container img {
+  width: 100px;
+  height: 100px;
+  padding-top: 25%;
+  padding-left: 10%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .item-text-container {
   display: flex;
-  flex-direction: column;
+  position: relative;
+  width: 100%;
+  padding-left: 30px;
+
 }
-.item-image-container,  .item-title,
-.item-short-descr, .price {
+
+.item-title {
+  position: absolute;
+  top: 30%;
+  font-weight: bold;
+
+
+}
+
+.item-short-descr {
+  position: absolute;
+  top: 30%;
+  width: 70%;
+  margin-top: 30px;
+}
+
+.price-container {
+  display: flex;
+  width: auto;
+  /*position: relative;*/
+  /*justify-content: end;*/
+  /*right: 0;*/
+  /*padding-left: 150px;*/
+}
+
+.price-content {
+  position: relative;
+  top: 45%;
+  right: 10px;
+  font-weight: bold;
+
+
+
+}
+
+.item-container hr {
+  display: flex;
+  border: 1px solid;
+  margin-left: 10px;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.total-container {
+  position: relative;
+  top: 20px;
+  /*justify-content: space-between;*/
+}
+
+.total-content {
+  position: absolute;
+  right: 0;
+/*padding-top: 5px;*/
+  display: flex;
+}
+
+.total-text {
+  position: relative;
+  right: 50px;
+  font-weight: bold;
+  /*padding-right: 20px;*/
+  /*justify-content: end;*/
+
+}
+
+.total-sum {
+  position: relative;
+  right: 5px;
+  padding-right: 2px;
+  font-weight: bold;
+
+}
+
+.button-container {
+  position: relative;
+  top: 80px;
   display: flex;
 
-  flex-direction: column;
+  justify-content: end;
+  /*justify-content: space-between;*/
+
 
 }
 
+.button-content {
+position: relative;
+
+}
+.checkout-btn, .back-btn{
+  height: 25px;
+  width: 125px;
+  font-weight: bold;
+
+
+}
+.back-btn {
+  outline: 2px solid #dbdbdb ;
+  background-color: white;
+  color: #777777;
+  /*margin-right: 10px;*/
+}
+.checkout-btn {
+  position: relative;
+  left: 15px;
+  background-color: #6fce96;
+  color: white;
+}
