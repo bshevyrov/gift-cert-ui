@@ -150,5 +150,45 @@ body {
   /*justify-content: center;*/
   /*height: 100vh;*/
   /*flex-direction: column;*/
-  background-color: #ffffff;
+  background-color: #f2f2f2;
+}
+
+
+
+.main-container {
+  position: relative;
+  display: flex;
+  top: 75px;
+  left: 45px;
+  /*padding-left: 30px;*/
+  /*margin-top: 30px;*/
+  /*justify-content: center;*/
+  flex-wrap: wrap;
+}
+
+.main-content {
+
+}
+
+.image-content {
+
+}
+
+.image-content img {
+  width: 600px;
+  height: 300px;
+  /*padding-top: 25%;*/
+  /*padding-left: 10%;*/
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.card-content {
+  display: flex;
+}
+
+
+.description-content {
+  display: flex;
 }
