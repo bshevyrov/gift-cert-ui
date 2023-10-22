@@ -154,11 +154,8 @@ body {
 }
 
 .main-container {
-/*width: 100%;*/
-/*  display: flex;*/
-/*  align-items: center;*/
-/*  justify-content: center;*/
 
+/*width: 1800px;*/
 }
 
 .main-content {
@@ -168,15 +165,15 @@ body {
   position: relative;
   top: 120px;
   left: 200px;
-  width: 800px;
+  /*width: 1000px;*/
   flex-direction: column;
 }
 .page-name {
   background-color: #bcbcbc;
   /*position: absolute;*/
-  top: var(--nav-height);
-  left: 0;
-  width: 100%;
+  /*top: var(--nav-height);*/
+  /*left: 0;*/
+  width: 800px;
   height: var(--nav-height);
   /*padding-left: var(--left-padding);*/
   display: flex;
@@ -191,31 +188,105 @@ body {
   position: relative;
   left: 20px;
 }
-.form-container {
-  /*display: flex;*/
-  /*flex-wrap: wrap;*/
-  /*flex-direction: column;*/
-  /*justify-content: space-between;*/
+/*.form-container {*/
+/*  display: flex;*/
+/*  flex-wrap: wrap;*/
+/*  flex-direction: column;*/
+/*  justify-content: space-between;*/
 
-}
-.form-content {
+/*}*/
+/*.form-content {*/
+/*  display: flex;*/
+/*  flex-direction: row;*/
+/*  flex-wrap: wrap;*/
+/*  width: 100%;*/
+/*}*/
+
+/*.left-form {*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*  width: 50%;*/
+/*  !*flex-basis: 50%;*!*/
+/*  !*flex: 1;*!*/
+/*}*/
+/*.right-form {*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*  width: 50%;*/
+
+/*  !*flex-basis: 50%;*!*/
+/*  !*flex: 2;*!*/
+/*}*/
+.row {
   display: flex;
   flex-direction: row;
+  /*justify-content: space-between;*/
+  justify-content: space-around;
   flex-wrap: wrap;
   width: 100%;
+  background: white;
 }
-
-.left-form {
+input {
+  height: 30px;
+  outline: 1px solid #d8d8d8;
+}
+label {
+  padding-top: 15px;
+  padding-bottom: 5px;
+  color: #555555;
+  font-weight: bold;
+}
+.button-container {
+  padding-top: 20px;
+  padding-bottom: 15px;
+}
+.column {
+  /*padding-left: 25px;*/
+  /*padding-right: 35px;*/
   display: flex;
   flex-direction: column;
-  flex-basis: 100%;
-}
-.right-form {
-  display: flex;
-  flex-direction: column;
-  flex-basis: 100%;
+  /*flex-basis: 100%;*/
+  /*flex: 1;*/
+  width: 46%;
+  /*width: 43%;*/
 }
 
+/*.double-column {*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*  !*flex-basis: 100%;*!*/
+/*  !*flex: 2*!*/
+/*}*/
+
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+}
+
+.sign-up-btn, .cancel-btn{
+  height: 25px;
+  /*width: 125px;*/
+  width: 46%;
+  font-weight: bold;
+
+
+}
+.sign-up-btn {
+  padding-right: 15px;
+}
+.cancel-btn {
+  outline: 2px solid #dbdbdb ;
+  background-color: white;
+  color: #777777;
+  /*margin-right: 10px;*/
+}
+.sign-up-btn {
+  position: relative;
+  background-color: #6fce96;
+  color: white;
+}
 
 footer {
   background-color: #ffffff;
