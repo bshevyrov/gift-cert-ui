@@ -168,7 +168,7 @@ body {
   /*width: 1000px;*/
   flex-direction: column;
 }
-.page-name {
+.category-panel {
   background-color: #bcbcbc;
   /*position: absolute;*/
   /*top: var(--nav-height);*/
@@ -184,7 +184,7 @@ body {
 
 }
 
-.page-name p {
+.category-panel p {
   position: relative;
   left: 20px;
 }

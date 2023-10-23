@@ -153,7 +153,7 @@ body {
   background-color: #ffffff;
 }
 
-.page-name {
+.category-panel {
   background-color: #bcbcbc;
   position: absolute;
   top: var(--nav-height);
@@ -168,7 +168,7 @@ body {
   font-size: medium;
 }
 
-.page-name p {
+.category-panel p {
   position: relative;
   left: var(--left-padding);
 }
