@@ -1,71 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-  <link rel="stylesheet" href="newlogin.css"/>
-  <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/userlogin.css"/>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp">
 </head>
 <body>
 <nav>
-  <div class="www">
     <div class="logo-menu-container">
-    <span class="material-icons md-dark">
-menu
-</span>
-      <div class="dropdown-content">
-        <a href="#">Home</a>
-        <a href="#">Page2</a>
-      </div>
+        <div class="menu-container">
+            <span class="material-icons md-dark"> menu </span>
+            <div class="dropdown-content">
+                <a href="#">Home</a> <a href="#">Page2</a></div>
+        </div>
+        <div class="mini-logo-container">
+            <img src="img/Safeimagekit-resized-img.png" alt="Mini Logo" class="logo-mini">
+        </div>
     </div>
-    <div class="mini-logo-container">
-      <img src="img/Safeimagekit-resized-img.png" alt="Mini Logo" class="logo-mini">
+    <div class="search-container">
+        <div class="search-bar">
+            <form><input type="search" name="query" placeholder="Search by item name"></form>
+        </div>
+        <div class="search-dropdown"><select>
+            <option value="all" selected="selected">All categories</option>
+            <option value="tag">Tag</option>
+            <option value="name">Name</option>
+            <option value="description">Description</option>
+        </select></div>
     </div>
-  </div>
-  <div class="search-container">
-    <div class="search-bar">
-      <form>
-        <input type="search" name="query" placeholder="Search by item name">
-      </form>
-    </div>
-    <div class="search-dropdown">
-      <select>
-        <option value="all" selected="selected">All categories</option>
-        <option value="tag">Tag</option>
-        <option value="name">Name</option>
-        <option value="description">Description</option>
-      </select>
-    </div>
-  </div>
-  <div class="sign-in-container">
-    <span class="material-icons-outlined">
-favorite
-</span>
-    <span class="material-icons-outlined">
-shopping_cart
-</span>
-    <span>
-    <a href="#">Login</a>
-    |
-    <a href="#">Sign Up</a>
-      </span>
-  </div>
+    <div class="sign-in-container"><span class="material-icons-outlined"> favorite </span> <span
+            class="material-icons-outlined"> shopping_cart </span> <span> <a href="#">Login</a> | <a
+            href="#">Sign Up</a> </span></div>
 </nav>
 <main>
-<div class="login-container">
-  <div class="logo-container">
-    <img src="img/Safeimagekit-resized-img.png" alt="Logo" class="logo-big">
-  </div>
-  <div class="login-content">
-    <input type="text" placeholder="Login">
-    <input type="password" placeholder="Password">
-  </div>
-  <div class="login-footer">
-    <button type="submit">Login</button>
-  </div>
-</div>
+    <div class="main-container">
+        <div class="main-content">
+            <div class="logo-container">
+                <img src="img/Safeimagekit-resized-img.png" alt="Logo" class="logo-big">
+            </div>
+            <div class="input-container">
+            <div class="login-content">
+                <input type="text" placeholder="Login">
+                <input type="password" placeholder="Password">
+                <button type="submit">Login</button>
+            </div>
+            </div>
+        </div>
+    </div>
 </main>
-</body>
 <footer></footer>
+</body>
 </html>
