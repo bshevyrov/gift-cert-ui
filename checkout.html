@@ -1,121 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Checkout</title>
-  <link rel="stylesheet" href="css/checkout.css"/>
-  <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp">
+    <meta charset="UTF-8">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="css/checkout.css"/>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp">
 </head>
 <body>
 <nav>
-  <div class="logo-menu-container">
-    <div class="menu-container">
-      <span class="material-icons md-dark"> menu </span>
-      <div class="dropdown-content">
-        <a href="#">Home</a> <a href="#">Page2</a></div>
+    <div class="logo-menu-container">
+        <div class="menu-container">
+            <span class="material-icons md-dark"> menu </span>
+            <div class="dropdown-content">
+                <a href="#">Home</a> <a href="#">Page2</a></div>
+        </div>
+        <div class="mini-logo-container">
+            <img src="img/Safeimagekit-resized-img.png" alt="Mini Logo" class="logo-mini">
+        </div>
     </div>
-    <div class="mini-logo-container">
-      <img src="img/Safeimagekit-resized-img.png" alt="Mini Logo" class="logo-mini">
+    <div class="search-container">
+        <div class="search-bar">
+            <form><input type="search" name="query" placeholder="Search by item name"></form>
+        </div>
+        <div class="search-dropdown"><select>
+            <option value="all" selected="selected">All categories</option>
+            <option value="tag">Tag</option>
+            <option value="name">Name</option>
+            <option value="description">Description</option>
+        </select></div>
     </div>
-  </div>
-  <div class="search-container">
-    <div class="search-bar">
-      <form><input type="search" name="query" placeholder="Search by item name"></form>
-    </div>
-    <div class="search-dropdown"><select>
-      <option value="all" selected="selected">All categories</option>
-      <option value="tag">Tag</option>
-      <option value="name">Name</option>
-      <option value="description">Description</option>
-    </select></div>
-  </div>
-  <div class="sign-in-container"><span class="material-icons-outlined"> favorite </span> <span
-          class="material-icons-outlined"> shopping_cart </span> <span> <a href="#">Login</a> | <a
-          href="#">Sign Up</a> </span></div>
+    <div class="sign-in-container"><span class="material-icons-outlined"> favorite </span> <span
+            class="material-icons-outlined"> shopping_cart </span> <span> <a href="#">Login</a> | <a
+            href="#">Sign Up</a> </span></div>
 </nav>
 <main>
-  <div class="category-panel">
-    <p>Checkout</p>
-  </div>
-  <div class="body-container">
-    <div class="item-container">
-      <div class="item-container-content">
-        <div class="item-image-container">
-          <img src="img/Safeimagekit-resized-img.png" alt="Mini Logo" class="logo-mini">
-        </div>
-        <div class="item-text-container">
-          <div class="item-title">
-            Title
-          </div>
-          <div class="item-short-descr">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua...
-          </div>
-        </div>
-        <div class="price-container">
-          <div class="price-content">
-            $200
-          </div>
-        </div>
-      </div>
-      <div class="item-container-content">
-        <div class="item-image-container">
-          <img src="img/Safeimagekit-resized-img.png" alt="Mini Logo" class="logo-mini">
-        </div>
-        <div class="item-text-container">
-          <div class="item-title">
-            Title
-          </div>
-          <div class="item-short-descr">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua...
-          </div>
-        </div>
-        <div class="price-container">
-          <div class="price-content">
-            $120
-          </div>
-        </div>
-      </div>
-      <div class="item-container-content">
-        <div class="item-image-container">
-          <img src="img/Safeimagekit-resized-img.png" alt="Mini Logo" class="logo-mini">
-        </div>
-        <div class="item-text-container">
-          <div class="item-title">
-            Title
-          </div>
-          <div class="item-short-descr">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua...
-          </div>
-        </div>
-        <div class="price-container">
-          <div class="price-content">
-            $40
-          </div>
-        </div>
-      </div>
-      <hr>
-      <div class="total-container">
-        <div class="total-content">
-          <div class="total-text">
-            Total
-          </div>
-          <div class="total-sum">
-            $360
-          </div>
-        </div>
-      </div>
-      <div class="button-container">
-        <div class="button-content">
-          <button class="back-btn"> Back</button>
-          <button class="checkout-btn" type="submit"> Checkout</button>
-        </div>
-      </div>
+    <div class="category-panel">
+        <p>Checkout</p>
     </div>
-  </div>
+    <div class="body-container">
+        <div class="item-container">
+            <div class="item-container-content">
+                <div class="item-image-container">
+                    <img src="img/Safeimagekit-resized-img.png" alt="Mini Logo" class="logo-mini">
+                </div>
+                <div class="item-text-container">
+                    <div class="item-title">
+                        Title
+                    </div>
+                    <div class="item-short-descr">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et
+                        dolore magna aliqua...
+                    </div>
+                </div>
+                <div class="price-container">
+                    <div class="price-content">
+                        $200
+                    </div>
+                </div>
+            </div>
+            <div class="item-container-content">
+                <div class="item-image-container">
+                    <img src="img/Safeimagekit-resized-img.png" alt="Mini Logo" class="logo-mini">
+                </div>
+                <div class="item-text-container">
+                    <div class="item-title">
+                        Title
+                    </div>
+                    <div class="item-short-descr">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et
+                        dolore magna aliqua...
+                    </div>
+                </div>
+                <div class="price-container">
+                    <div class="price-content">
+                        $120
+                    </div>
+                </div>
+            </div>
+            <div class="item-container-content">
+                <div class="item-image-container">
+                    <img src="img/Safeimagekit-resized-img.png" alt="Mini Logo" class="logo-mini">
+                </div>
+                <div class="item-text-container">
+                    <div class="item-title">
+                        Title
+                    </div>
+                    <div class="item-short-descr">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et
+                        dolore magna aliqua...
+                    </div>
+                </div>
+                <div class="price-container">
+                    <div class="price-content">
+                        $40
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="total-container">
+                <div class="total-content">
+                    <div class="total-text">
+                        Total
+                    </div>
+                    <div class="total-sum">
+                        $360
+                    </div>
+                </div>
+            </div>
+            <div class="button-container">
+                <div class="button-content">
+                    <button class="back-btn"> Back</button>
+                    <button class="checkout-btn" type="submit"> Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
 </body>
 </html>

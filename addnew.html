@@ -1,86 +1,83 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
-  <meta charset="UTF-8">
-  <title>Add new</title>
-  <link rel="stylesheet" href="css/addnew.css"/>
-  <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp">
+    <meta charset="UTF-8">
+    <title>Add new</title>
+    <link rel="stylesheet" href="css/addnew.css"/>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp">
 </head>
 <body>
 <nav>
-  <div class="logo-menu-container">
-    <div class="menu-container">
-      <span class="material-icons md-dark"> menu </span>
-      <div class="dropdown-content">
-        <a href="#">Home</a> <a href="#">Page2</a></div>
+    <div class="logo-menu-container">
+        <div class="menu-container">
+            <span class="material-icons md-dark"> menu </span>
+            <div class="dropdown-content">
+                <a href="#">Home</a> <a href="#">Page2</a></div>
+        </div>
+        <div class="mini-logo-container">
+            <img src="img/Safeimagekit-resized-img.png" alt="Mini Logo" class="logo-mini">
+        </div>
     </div>
-    <div class="mini-logo-container">
-      <img src="img/Safeimagekit-resized-img.png" alt="Mini Logo" class="logo-mini">
+    <div class="search-container">
+        <div class="search-bar">
+            <form><input type="search" name="query" placeholder="Search by item name"></form>
+        </div>
+        <div class="search-dropdown"><select>
+            <option value="all" selected="selected">All categories</option>
+            <option value="tag">Tag</option>
+            <option value="name">Name</option>
+            <option value="description">Description</option>
+        </select></div>
     </div>
-  </div>
-  <div class="search-container">
-    <div class="search-bar">
-      <form><input type="search" name="query" placeholder="Search by item name"></form>
-    </div>
-    <div class="search-dropdown"><select>
-      <option value="all" selected="selected">All categories</option>
-      <option value="tag">Tag</option>
-      <option value="name">Name</option>
-      <option value="description">Description</option>
-    </select></div>
-  </div>
-  <div class="sign-in-container"><span class="material-icons-outlined"> favorite </span> <span
-          class="material-icons-outlined"> shopping_cart </span> <span> <a href="#">Login</a> | <a
-          href="#">Sign Up</a> </span></div>
+    <div class="sign-in-container"><span class="material-icons-outlined"> favorite </span> <span
+            class="material-icons-outlined"> shopping_cart </span> <span> <a href="#">Login</a> | <a
+            href="#">Sign Up</a> </span></div>
 </nav>
 <main>
-  <div class="category-panel ">
-    <p>Add New Coupon</p>
-  </div>
-  <div class="input-container">
-    <form>
-      <div class="left-input">
-        <label for="company">Company</label>
-        <input id="company" type="text">
-        <label for="category">Category</label>
-        <select id="category" required>
-          <option value="" disabled selected="selected">Category name</option>
-          <option value="cat1">Cat 1</option>
-          <option value="cat2">Cat 2</option>
-          <option value="cat3">Cat 3</option>
-        </select>
-        <label for="valid">Valid to</label>
-        <input id="valid" type="date">
-        <label for="price">Price</label>
-        <input id="price" type="number">
-        <label>Images</label>
-
-        <div class="input-images">
+    <div class="category-panel ">
+        <p>Add New Coupon</p>
+    </div>
+    <div class="input-container">
+        <form>
+            <div class="left-input">
+                <label for="company">Company</label>
+                <input id="company" type="text">
+                <label for="category">Category</label>
+                <select id="category" required>
+                    <option value="" disabled selected="selected">Category name</option>
+                    <option value="cat1">Cat 1</option>
+                    <option value="cat2">Cat 2</option>
+                    <option value="cat3">Cat 3</option>
+                </select>
+                <label for="valid">Valid to</label>
+                <input id="valid" type="date">
+                <label for="price">Price</label>
+                <input id="price" type="number">
+                <label>Images</label>
+                <div class="input-images">
           <span class="material-icons-outlined">
             filter
           </span>
-          <input id="images" type="file">
-        </div>
-      </div>
-    </form>
-
-    <form>
-      <div class="right-input">
-        <label for="item-name">Item Name</label>
-        <input id="item-name" type="text">
-        <label for="short-descr">Short description</label>
-        <textarea id="short-descr" type="text"></textarea>
-        <label for="long-descr">Long description</label>
-        <textarea id="long-descr" type="text" ></textarea>
-        <div class="form-buttons">
-          <button class="back-btn" type="button">Back</button>
-          <button class="submit-btn" type="submit">Save</button>
-        </div>
-      </div>
-    </form>
-
-  </div>
+                    <input id="images" type="file">
+                </div>
+            </div>
+        </form>
+        <form>
+            <div class="right-input">
+                <label for="item-name">Item Name</label>
+                <input id="item-name" type="text">
+                <label for="short-descr">Short description</label>
+                <textarea id="short-descr" type="text"></textarea>
+                <label for="long-descr">Long description</label>
+                <textarea id="long-descr" type="text"></textarea>
+                <div class="form-buttons">
+                    <button class="back-btn" type="button">Back</button>
+                    <button class="submit-btn" type="submit">Save</button>
+                </div>
+            </div>
+        </form>
+    </div>
 </main>
 </body>
 </html>

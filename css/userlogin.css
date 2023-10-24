@@ -1,0 +1,206 @@
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  background-color: #fff;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+nav .logo-menu-container {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+nav .logo-menu-container .menu-container {
+  overflow: hidden;
+}
+nav .logo-menu-container .menu-container .material-icons.md-dark {
+  color: #c3c3c3;
+  font-size: 48px;
+  font-weight: 700;
+}
+nav .logo-menu-container .menu-container:hover .dropdown-content {
+  display: block;
+}
+nav .logo-menu-container .menu-container .dropdown-content {
+  background-color: #fff;
+  display: none;
+  overflow: hidden;
+  position: absolute;
+  width: auto;
+  z-index: 1;
+}
+nav .logo-menu-container .menu-container .dropdown-content a {
+  color: #000;
+  display: block;
+  padding: 5px;
+  text-decoration: none;
+}
+nav .logo-menu-container .mini-logo-container img {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 20px;
+  padding-left: 10%;
+  padding-top: 25%;
+  width: 50px;
+}
+nav .search-container {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: 40px;
+  padding-top: 10px;
+  width: 500px;
+}
+nav .search-container .search-bar input {
+  height: 30px;
+  outline: 1px solid #d8d8d8;
+  padding-left: 20px;
+  width: 350px;
+}
+nav .search-container .search-dropdown select {
+  background: #fff;
+  height: 30px;
+  outline: 1px solid #d8d8d8;
+  text-align: center;
+  width: 150px;
+}
+nav .sign-in-container {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+nav .sign-in-container span {
+  color: #747474;
+  padding-right: 15px;
+}
+nav .sign-in-container a {
+  font-size: 13px;
+}
+
+body {
+  background-color: #f2f2f2;
+}
+
+.main-container {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: 94vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.main-container .main-content {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 250px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  outline: 1px solid #d8d8d8;
+  position: relative;
+  width: 300px;
+}
+.main-container .main-content .logo-container {
+  bottom: 60%;
+  overflow: visible;
+  position: absolute;
+}
+.main-container .main-content .logo-container img {
+  border-radius: 50%;
+}
+.main-container .main-content .input-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-bottom: 10%;
+}
+.main-container .main-content .input-container .login-content {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  row-gap: 10px;
+}
+.main-container .main-content .input-container .login-content input {
+  border: 2px solid #ccc;
+  font-size: medium;
+  height: 30px;
+}
+.main-container .main-content .input-container .login-content input::-webkit-input-placeholder {
+  text-align: center;
+}
+.main-container .main-content .input-container .login-content input::-moz-placeholder {
+  text-align: center;
+}
+.main-container .main-content .input-container .login-content input:-ms-input-placeholder {
+  text-align: center;
+}
+.main-container .main-content .input-container .login-content input::-ms-input-placeholder {
+  text-align: center;
+}
+.main-container .main-content .input-container .login-content input::placeholder {
+  text-align: center;
+}
+.main-container .main-content .input-container .login-content button {
+  background-color: green;
+  color: white;
+  font-size: medium;
+  font-weight: bold;
+  height: 30px;
+  width: 100%;
+}

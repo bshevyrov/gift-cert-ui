@@ -1,0 +1,264 @@
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  background-color: #fff;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+nav .logo-menu-container {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+nav .logo-menu-container .menu-container {
+  overflow: hidden;
+}
+nav .logo-menu-container .menu-container .material-icons.md-dark {
+  color: #c3c3c3;
+  font-size: 48px;
+  font-weight: 700;
+}
+nav .logo-menu-container .menu-container:hover .dropdown-content {
+  display: block;
+}
+nav .logo-menu-container .menu-container .dropdown-content {
+  background-color: #fff;
+  display: none;
+  overflow: hidden;
+  position: absolute;
+  width: auto;
+  z-index: 1;
+}
+nav .logo-menu-container .menu-container .dropdown-content a {
+  color: #000;
+  display: block;
+  padding: 5px;
+  text-decoration: none;
+}
+nav .logo-menu-container .mini-logo-container img {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 20px;
+  padding-left: 10%;
+  padding-top: 25%;
+  width: 50px;
+}
+nav .search-container {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: 40px;
+  padding-top: 10px;
+  width: 500px;
+}
+nav .search-container .search-bar input {
+  height: 30px;
+  outline: 1px solid #d8d8d8;
+  padding-left: 20px;
+  width: 350px;
+}
+nav .search-container .search-dropdown select {
+  background: #fff;
+  height: 30px;
+  outline: 1px solid #d8d8d8;
+  text-align: center;
+  width: 150px;
+}
+nav .sign-in-container {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+nav .sign-in-container span {
+  color: #747474;
+  padding-right: 15px;
+}
+nav .sign-in-container a {
+  font-size: 13px;
+}
+
+.category-panel {
+  background-color: #bcbcbc;
+  width: 100%;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  font-weight: bold;
+  font-size: medium;
+}
+.category-panel p {
+  position: relative;
+  left: 50px;
+}
+
+body {
+  background-color: #ffffff;
+}
+
+.body-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.body-container .item-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 700px;
+}
+.body-container .item-container .item-container-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.body-container .item-container .item-container-content img {
+  width: 100px;
+  height: 100px;
+  padding-top: 25%;
+  padding-left: 10%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.body-container .item-container .item-text-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  width: 100%;
+  padding-left: 30px;
+}
+.body-container .item-container .item-text-container .item-title {
+  position: absolute;
+  top: 30%;
+  font-weight: bold;
+}
+.body-container .item-container .item-text-container .item-short-descr {
+  position: absolute;
+  top: 30%;
+  width: 70%;
+  margin-top: 30px;
+}
+.body-container .item-container .price-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: auto;
+}
+.body-container .item-container .price-container .price-content {
+  position: relative;
+  top: 45%;
+  right: 10px;
+  font-weight: bold;
+}
+.body-container .item-container hr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 1px solid;
+  margin-left: 10px;
+  margin-top: 10px;
+  width: 100%;
+}
+.body-container .item-container .total-container {
+  padding-top: 20px;
+}
+.body-container .item-container .total-container .total-content {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.body-container .item-container .total-container .total-content .total-text {
+  position: relative;
+  right: 50px;
+  font-weight: bold;
+}
+.body-container .item-container .total-container .total-content .total-sum {
+  position: relative;
+  right: 5px;
+  padding-right: 2px;
+  font-weight: bold;
+}
+.body-container .item-container .button-container {
+  padding-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+.body-container .item-container .button-container .button-content {
+  position: relative;
+}
+.body-container .item-container .button-container .button-content .back-btn {
+  outline: 2px solid #dbdbdb;
+  background-color: white;
+  color: #777777;
+  height: 25px;
+  width: 125px;
+  font-weight: bold;
+}
+.body-container .item-container .button-container .button-content .checkout-btn {
+  position: relative;
+  left: 15px;
+  background-color: #6fce96;
+  color: white;
+  height: 25px;
+  width: 125px;
+  font-weight: bold;
+}
