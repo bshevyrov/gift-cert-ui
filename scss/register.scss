@@ -6,16 +6,14 @@ body {
 }
 
 .main-container {
-  height: 94vh;
-  display: flex;
   align-items: center;
+  display: flex;
+  height: 94vh;
   justify-content: center;
 
   .main-content {
-    width: 800px;
     flex-direction: column;
-
-
+    width: 800px;
 
     .outer-container {
       background: white;
@@ -29,14 +27,14 @@ body {
         .column {
           display: flex;
           flex-direction: column;
-          width: 46%;
           padding-top: 15px;
+          width: 46%;
 
           label {
-            padding-bottom: 5px;
             color: #555555;
-            font-weight: bold;
             font-size: 14px;
+            font-weight: bold;
+            padding-bottom: 5px;
           }
 
           input {
@@ -45,41 +43,35 @@ body {
           }
 
           .button-container {
-            padding-top: 15px;
-            padding-bottom: 15px;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
+            padding-top: 15px;
+            padding-bottom: 15px;
 
             .cancel-btn {
-              outline: 2px solid #dbdbdb;
               background-color: white;
               color: #777777;
-              height: 25px;
-              width: 46%;
               font-weight: bold;
+              height: 25px;
+              outline: 2px solid #dbdbdb;
+              width: 46%;
             }
-
           }
 
           .sign-up-btn {
-            position: relative;
             background-color: #6fce96;
             color: white;
-            height: 25px;
-            width: 46%;
             font-weight: bold;
+            height: 25px;
             padding-right: 15px;
-
+            position: relative;
+            width: 46%;
           }
-
         }
       }
-
     }
-
   }
-
 }
 
 

@@ -1,134 +1,133 @@
 @use 'navbar';
 @use 'footer';
+
 body {
   background-color: #f2f2f2
 }
 
 .category-panel-container {
-  display: flex;
-  justify-content: center;
   align-items: center;
   background-color: #bcbcbc;
-  width: 100%;
   color: #fff;
-  font-weight: 700;
-  font-size: medium;
-  flex-wrap: wrap;
-  flex-direction: row;
   column-gap: 40px;
+  flex-direction: row;
+  font-size: medium;
+  font-weight: 700;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 
   .category-container {
-    display: flex;
-    justify-content: center;
     align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding-top: 20px;
     padding-bottom: 10px;
-    flex-direction: column;
 
     .category-image {
+      background-color: #fff;
       height: 50px;
       width: 50px;
-      background-color: #fff
     }
 
     .category-name {
+      color: gray;
       padding-top: 5px;
-      color: gray
     }
   }
 }
 
 .category-body-container {
   padding-top: 20px;
-  //width: 100%
 
   .coupon-row-container {
-    display: flex;
-    flex-wrap: wrap;
     flex-direction: row;
+    flex-wrap: wrap;
+    display: flex;
     justify-content: space-around;
     margin-bottom: 30px;
 
     .coupon-column-content {
+      background-color: #fff;
       display: flex;
       flex-direction: column;
-      background-color: #fff;
 
       .coupon-container {
         .coupon-image {
+          background-color: #dfdfdf;
           height: 150px;
           width: 150px;
-          background-color: #dfdfdf
         }
 
         .coupon-content {
           .coupon-row {
             display: flex;
-            flex-wrap: wrap;
             flex-direction: row;
+            flex-wrap: wrap;
             justify-content: space-between;
 
             .coupon-name {
+              align-items: center;
               display: flex;
               flex-direction: column;
-              align-items: center;
               justify-content: center
             }
 
             .coupon-heart {
+              align-items: center;
               display: flex;
               flex-direction: column;
-              align-items: center;
               justify-content: center
             }
           }
 
           .coupon-row {
             .brief-description {
+              align-items: center;
               display: flex;
               flex-direction: column;
-              align-items: center;
+              font-size: 8px;
               justify-content: center;
-              font-size: 8px
             }
 
             .expire-date {
+              align-items: center;
               display: flex;
               flex-direction: column;
-              align-items: center;
-              justify-content: center;
               font-size: 6px;
+              justify-content: center;
             }
 
             hr {
               border-top: 1px solid #000
             }
-
           }
 
           .coupon-row {
             .coupon-price {
+              align-items: center;
               display: flex;
               flex-direction: column;
-              align-items: center;
               justify-content: center
             }
 
             .add-to-cart-btn {
-              flex-direction: column;
               align-items: center;
-              justify-content: center;
               display: flex;
+              flex-direction: column;
               height: 20px;
+              justify-content: center;
 
               button {
-                outline: 2px solid #dbdbdb;
                 background-color: #fff;
                 color: gray;
                 font-size: 10px;
+                font-weight: 700;
                 height: 10px;
+                outline: 2px solid #dbdbdb;
                 width: 80px;
-                font-weight: 700
               }
             }
           }

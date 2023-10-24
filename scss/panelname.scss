@@ -1,16 +1,16 @@
-
 .category-panel {
-  background-color: #bcbcbc;
-  width: 100%;
-  height:50px;
-  display: flex;
   align-items: center;
+  background-color: #bcbcbc;
   color: white;
-  font-weight: bold;
+  display: flex;
   font-size: medium;
+  font-weight: bold;
+  height: 50px;
+  width: 100%;
+
   p {
-    position: relative;
     left: 50px;
+    position: relative;
   }
 }
 

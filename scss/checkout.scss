@@ -19,33 +19,33 @@ body {
       display: flex;
 
       img {
-        width: 100px;
-        height: 100px;
-        padding-top: 25%;
-        padding-left: 10%;
-        background-size: contain;
-        background-repeat: no-repeat;
         background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 100px;
+        padding-left: 10%;
+        padding-top: 25%;
+        width: 100px;
       }
     }
 
     .item-text-container {
       display: flex;
+      padding-left: 30px;
       position: relative;
       width: 100%;
-      padding-left: 30px;
 
       .item-title {
+        font-weight: bold;
         position: absolute;
         top: 30%;
-        font-weight: bold;
       }
 
       .item-short-descr {
+        margin-top: 30px;
         position: absolute;
         top: 30%;
         width: 70%;
-        margin-top: 30px;
       }
     }
 
@@ -54,16 +54,16 @@ body {
       width: auto;
 
       .price-content {
-        position: relative;
-        top: 45%;
-        right: 10px;
         font-weight: bold;
+        position: relative;
+        right: 10px;
+        top: 45%;
       }
     }
 
     hr {
-      display: flex;
       border: 1px solid;
+      display: flex;
       margin-left: 10px;
       margin-top: 10px;
       width: 100%;
@@ -73,50 +73,49 @@ body {
       padding-top: 20px;
 
       .total-content {
-        justify-content: end;
         display: flex;
+        justify-content: end;
 
         .total-text {
+          font-weight: bold;
           position: relative;
           right: 50px;
-          font-weight: bold;
         }
 
         .total-sum {
+          font-weight: bold;
+          padding-right: 2px;
           position: relative;
           right: 5px;
-          padding-right: 2px;
-          font-weight: bold;
-
         }
       }
     }
 
     .button-container {
-      padding-top: 30px;
       display: flex;
       justify-content: end;
+      padding-top: 30px;
 
       .button-content {
         position: relative;
 
         .back-btn {
-          outline: 2px solid #dbdbdb;
           background-color: white;
           color: #777777;
-          height: 25px;
-          width: 125px;
           font-weight: bold;
+          height: 25px;
+          outline: 2px solid #dbdbdb;
+          width: 125px;
         }
 
         .checkout-btn {
-          position: relative;
-          left: 15px;
           background-color: #6fce96;
+          font-weight: bold;
           color: white;
           height: 25px;
+          left: 15px;
+          position: relative;
           width: 125px;
-          font-weight: bold;
         }
       }
     }
