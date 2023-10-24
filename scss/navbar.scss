@@ -4,6 +4,10 @@
   padding: 0;
 }
 
+//.dropdown :hover .dropdown-content,.logo-menu-container :hover .dropdown-content {
+//  display: block
+//}
+
 nav {
   background-color: #fff;
   flex-direction: row;
@@ -25,6 +29,10 @@ nav {
         font-weight: 700
       }
 
+      &:hover .dropdown-content {
+        display: block;
+      }
+
       .dropdown-content {
         background-color: #fff;
         display: none;
@@ -41,6 +49,7 @@ nav {
           text-decoration: none
         }
       }
+
     }
 
     .mini-logo-container {
@@ -54,8 +63,6 @@ nav {
         width: 50px;
       }
     }
-
-
   }
 
   .search-container {
@@ -95,12 +102,13 @@ nav {
       color: #747474;
       padding-right: 15px
     }
+
+    a {
+      font-size: 13px;
+    }
   }
 }
 
-.dropdown:hover .dropdown-content, .logo-menu-container:hover .dropdown-content {
-  display: block
-}
 
 
 

@@ -1,0 +1,144 @@
+@use 'navbar';
+@use 'footer';
+
+body {
+  background-color: #f2f2f2
+}
+
+.category-panel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #bcbcbc;
+  width: 100%;
+  color: #fff;
+  font-weight: 700;
+  font-size: medium;
+  flex-wrap: wrap;
+  flex-direction: row;
+  column-gap: 40px;
+
+  .category-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    flex-direction: column;
+
+    .category-image {
+      height: 50px;
+      width: 50px;
+      background-color: #fff
+    }
+
+    .category-name {
+      padding-top: 5px;
+      color: gray
+    }
+  }
+}
+
+
+.category-body-container {
+  padding-top: 20px;
+  //width: 100%
+
+  .coupon-row-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 30px;
+
+    .coupon-column-content {
+      display: flex;
+      flex-direction: column;
+      background-color: #fff;
+
+      .coupon-container {
+        .coupon-image {
+          height: 150px;
+          width: 150px;
+          background-color: #dfdfdf
+        }
+
+        .coupon-content {
+          .coupon-row {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: space-between;
+
+            .coupon-name {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center
+            }
+
+            .coupon-heart {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center
+            }
+          }
+
+          .coupon-row {
+            .brief-description {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              font-size: 8px
+            }
+
+            .expire-date {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              font-size: 6px;
+            }
+
+            hr {
+              border-top: 1px solid #000
+            }
+
+          }
+
+          .coupon-row {
+            .coupon-price {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center
+            }
+
+            .add-to-cart-btn {
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              display: flex;
+              height: 20px;
+
+              button {
+                outline: 2px solid #dbdbdb;
+                background-color: #fff;
+                color: gray;
+                font-size: 10px;
+                height: 10px;
+                width: 80px;
+                font-weight: 700
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
