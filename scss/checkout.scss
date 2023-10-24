@@ -1,0 +1,124 @@
+@use "navbar";
+@use "panelname";
+
+body {
+  background-color: #ffffff;
+}
+
+.body-container {
+  display: flex;
+  justify-content: center;
+
+  .item-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 700px;
+
+    .item-container-content {
+      display: flex;
+
+      img {
+        width: 100px;
+        height: 100px;
+        padding-top: 25%;
+        padding-left: 10%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+
+    .item-text-container {
+      display: flex;
+      position: relative;
+      width: 100%;
+      padding-left: 30px;
+
+      .item-title {
+        position: absolute;
+        top: 30%;
+        font-weight: bold;
+      }
+
+      .item-short-descr {
+        position: absolute;
+        top: 30%;
+        width: 70%;
+        margin-top: 30px;
+      }
+    }
+
+    .price-container {
+      display: flex;
+      width: auto;
+
+      .price-content {
+        position: relative;
+        top: 45%;
+        right: 10px;
+        font-weight: bold;
+      }
+    }
+
+    hr {
+      display: flex;
+      border: 1px solid;
+      margin-left: 10px;
+      margin-top: 10px;
+      width: 100%;
+    }
+
+    .total-container {
+      padding-top: 20px;
+
+      .total-content {
+        justify-content: end;
+        display: flex;
+
+        .total-text {
+          position: relative;
+          right: 50px;
+          font-weight: bold;
+        }
+
+        .total-sum {
+          position: relative;
+          right: 5px;
+          padding-right: 2px;
+          font-weight: bold;
+
+        }
+      }
+    }
+
+    .button-container {
+      padding-top: 30px;
+      display: flex;
+      justify-content: end;
+
+      .button-content {
+        position: relative;
+
+        .back-btn {
+          outline: 2px solid #dbdbdb;
+          background-color: white;
+          color: #777777;
+          height: 25px;
+          width: 125px;
+          font-weight: bold;
+        }
+
+        .checkout-btn {
+          position: relative;
+          left: 15px;
+          background-color: #6fce96;
+          color: white;
+          height: 25px;
+          width: 125px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
