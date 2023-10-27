@@ -1,8 +1,9 @@
 @use "navbar";
 @use "panelname";
+@use "variables";
 
 body {
-  background-color: #f2f2f2;
+  background-color: #{variables.$body-color};
 }
 
 .main-container {
@@ -16,7 +17,7 @@ body {
     width: 800px;
 
     .outer-container {
-      background: white;
+      background: #{variables.$second-color};
 
       .row {
         display: flex;
@@ -31,7 +32,7 @@ body {
           width: 46%;
 
           label {
-            color: #555555;
+            color: #{variables.$text-color};
             font-size: 14px;
             font-weight: bold;
             padding-bottom: 5px;
@@ -39,7 +40,7 @@ body {
 
           input {
             height: 30px;
-            outline: 1px solid #d8d8d8;
+            outline: 1px solid #{variables.$outline-color};
           }
 
           .button-container {
@@ -50,18 +51,18 @@ body {
             padding-bottom: 15px;
 
             .cancel-btn {
-              background-color: white;
-              color: #777777;
+              background-color: #{variables.$second-color};
+              color: #{variables.$text-color};
               font-weight: bold;
               height: 25px;
-              outline: 2px solid #dbdbdb;
+              outline: 2px solid #{variables.$outline-color};
               width: 46%;
             }
           }
 
           .sign-up-btn {
-            background-color: #6fce96;
-            color: white;
+            background-color: #{variables.$ok-btn-color};
+            color: #{variables.$second-color};
             font-weight: bold;
             height: 25px;
             padding-right: 15px;

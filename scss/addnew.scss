@@ -1,13 +1,14 @@
 @use "navbar";
 @use "panelname";
+@use "variables";
 
 body {
-  background-color: #ffffff;
+  background-color: #{variables.$body-color};
 }
 
 label {
   font-weight: bold;
-  color: gray;
+  color: #{variables.$text-color};
   margin-bottom: 10px;
   padding-top: 20px;
 }
@@ -19,7 +20,7 @@ label {
 .input-images {
   height: 35px;
   padding-left: 20px;
-  outline: 1px solid #d8d8d8;
+  outline: 1px solid #{variables.$outline-color};
   width: 350px;
 }
 
@@ -28,11 +29,11 @@ label {
 }
 
 #category {
-  background: #ffffff;
+  background: #{variables.$second-color};
   font-size: 12px;
   font-weight: bold;
   height: 35px;
-  outline: 1px solid #d8d8d8;
+  outline: 1px solid #{variables.$outline-color};
   padding-left: 20px;
 }
 
@@ -82,17 +83,17 @@ label {
       padding-top: 35px;
 
       .back-btn {
-        background-color: white;
-        color: #777777;
+        background-color: #{variables.$second-color};
+        color: #{variables.$text-color};
         font-weight: bold;
         height: 35px;
-        outline: 2px solid #dbdbdb;
+        outline: 2px solid #{variables.$outline-color};
         width: 175px;
       }
 
       .submit-btn {
-        background-color: #6fce96;
-        color: white;
+        background-color: #{variables.$ok-btn-color};
+        color: #{variables.$second-color};
         font-weight: bold;
         height: 35px;
         width: 175px;

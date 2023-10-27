@@ -1,7 +1,9 @@
+@use "variables";
+
 .category-panel {
   align-items: center;
-  background-color: #bcbcbc;
-  color: white;
+  background-color: #{variables.$category-panel-color};
+  color: #{variables.$second-color};
   display: flex;
   font-size: medium;
   font-weight: bold;

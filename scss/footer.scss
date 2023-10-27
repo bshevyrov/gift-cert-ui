@@ -1,4 +1,6 @@
+@use "variables";
+
 footer {
-  background-color: #fff;
+  background-color: #{variables.$second-color};
   height: 40px;
 }

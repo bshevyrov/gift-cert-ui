@@ -1,5 +1,6 @@
 @use "navbar";
 @use "panelname";
+@use "variables";
 
 body {
   background-color: #ffffff;
@@ -62,7 +63,8 @@ body {
     }
 
     hr {
-      border: 1px solid;
+      border: none;
+      border-top: 1px solid #{variables.$outline-color};
       display: flex;
       margin-left: 10px;
       margin-top: 10px;
@@ -100,18 +102,18 @@ body {
         position: relative;
 
         .back-btn {
-          background-color: white;
-          color: #777777;
+          background-color: #{variables.$second-color};
+          color: #{variables.$text-color};
           font-weight: bold;
           height: 25px;
-          outline: 2px solid #dbdbdb;
+          outline: 2px solid #{variables.$outline-color};
           width: 125px;
         }
 
         .checkout-btn {
-          background-color: #6fce96;
+          background-color: #{variables.$ok-btn-color};
           font-weight: bold;
-          color: white;
+          color: #{variables.$second-color};
           height: 25px;
           left: 15px;
           position: relative;

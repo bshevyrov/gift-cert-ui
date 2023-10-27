@@ -1,14 +1,15 @@
 @use 'navbar';
 @use 'footer';
+@use 'variables';
 
 body {
-  background-color: #f2f2f2
+  background-color: #{variables.$body-color};
 }
 
 .category-panel-container {
   align-items: center;
-  background-color: #bcbcbc;
-  color: #fff;
+  background-color: #{variables.$category-panel-color};
+  color: #{variables.$second-color};
   column-gap: 40px;
   flex-direction: row;
   font-size: medium;
@@ -27,13 +28,13 @@ body {
     padding-bottom: 10px;
 
     .category-image {
-      background-color: #fff;
+      background-color: #{variables.$second-color};
       height: 50px;
       width: 50px;
     }
 
     .category-name {
-      color: gray;
+      color: #{variables.$category-panel-color};
       padding-top: 5px;
     }
   }
@@ -50,23 +51,29 @@ body {
     margin-bottom: 30px;
 
     .coupon-column-content {
-      background-color: #fff;
+      background-color: #{variables.$second-color};
       display: flex;
       flex-direction: column;
 
       .coupon-container {
         .coupon-image {
-          background-color: #dfdfdf;
+          background-color: #{variables.$outline-color};
           height: 150px;
           width: 150px;
         }
 
         .coupon-content {
+          hr {
+            border: none;
+            border-top: 1px solid #{variables.$outline-color};
+          }
+
           .coupon-row {
+            padding-top: 5px;
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
-            justify-content: space-between;
+            justify-content: space-around;
 
             .coupon-name {
               align-items: center;
@@ -81,9 +88,7 @@ body {
               flex-direction: column;
               justify-content: center
             }
-          }
 
-          .coupon-row {
             .brief-description {
               align-items: center;
               display: flex;
@@ -100,12 +105,6 @@ body {
               justify-content: center;
             }
 
-            hr {
-              border-top: 1px solid #000
-            }
-          }
-
-          .coupon-row {
             .coupon-price {
               align-items: center;
               display: flex;
@@ -121,12 +120,12 @@ body {
               justify-content: center;
 
               button {
-                background-color: #fff;
-                color: gray;
+                background-color: #{variables.$second-color};
+                color: #{variables.$text-color};
                 font-size: 10px;
                 font-weight: 700;
                 height: 10px;
-                outline: 2px solid #dbdbdb;
+                outline: 2px solid #{variables.$outline-color};
                 width: 80px;
               }
             }

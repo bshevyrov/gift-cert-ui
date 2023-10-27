@@ -1,7 +1,8 @@
 @use "navbar";
+@use "variables";
 
 body {
-  background-color: #f2f2f2
+  background-color: #{variables.$body-color}
 }
 
 .main-container {
@@ -33,7 +34,7 @@ body {
       }
 
       .card-container {
-        background: #fff;
+        background: #{variables.$second-color};
         display: block;
         width: 30%;
 
@@ -50,13 +51,13 @@ body {
           }
 
           .card-short-descr {
-            color: #5c5c5c;
+            color: #{variables.$text-color};
             padding-bottom: 30px;
           }
 
           .time-left-container {
             p {
-              color: #5c5c5c;
+              color: #{variables.$text-color};
               font-size: 10px;
               padding-bottom: 3px;
             }
@@ -99,7 +100,7 @@ body {
       }
 
       .description-text {
-        color: #5c5c5c
+        color: #{variables.$text-color}
       }
     }
   }

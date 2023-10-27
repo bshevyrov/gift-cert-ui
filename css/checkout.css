@@ -35,7 +35,7 @@ nav .logo-menu-container .menu-container {
   overflow: hidden;
 }
 nav .logo-menu-container .menu-container .material-icons.md-dark {
-  color: #c3c3c3;
+  color: #d8d8d8;
   font-size: 48px;
   font-weight: 700;
 }
@@ -51,7 +51,7 @@ nav .logo-menu-container .menu-container .dropdown-content {
   z-index: 1;
 }
 nav .logo-menu-container .menu-container .dropdown-content a {
-  color: #000;
+  color: #555555;
   display: block;
   padding: 5px;
   text-decoration: none;
@@ -106,7 +106,7 @@ nav .sign-in-container {
           flex-direction: row;
 }
 nav .sign-in-container span {
-  color: #747474;
+  color: #555555;
   padding-right: 15px;
 }
 nav .sign-in-container a {
@@ -114,22 +114,22 @@ nav .sign-in-container a {
 }
 
 .category-panel {
-  background-color: #bcbcbc;
-  width: 100%;
-  height: 50px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: white;
-  font-weight: bold;
+  background-color: #bcbcbc;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   font-size: medium;
+  font-weight: bold;
+  height: 50px;
+  width: 100%;
 }
 .category-panel p {
-  position: relative;
   left: 50px;
+  position: relative;
 }
 
 body {
@@ -163,32 +163,32 @@ body {
   display: flex;
 }
 .body-container .item-container .item-container-content img {
-  width: 100px;
-  height: 100px;
-  padding-top: 25%;
-  padding-left: 10%;
-  background-size: contain;
-  background-repeat: no-repeat;
   background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 100px;
+  padding-left: 10%;
+  padding-top: 25%;
+  width: 100px;
 }
 .body-container .item-container .item-text-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding-left: 30px;
   position: relative;
   width: 100%;
-  padding-left: 30px;
 }
 .body-container .item-container .item-text-container .item-title {
+  font-weight: bold;
   position: absolute;
   top: 30%;
-  font-weight: bold;
 }
 .body-container .item-container .item-text-container .item-short-descr {
+  margin-top: 30px;
   position: absolute;
   top: 30%;
   width: 70%;
-  margin-top: 30px;
 }
 .body-container .item-container .price-container {
   display: -webkit-box;
@@ -197,16 +197,17 @@ body {
   width: auto;
 }
 .body-container .item-container .price-container .price-content {
-  position: relative;
-  top: 45%;
-  right: 10px;
   font-weight: bold;
+  position: relative;
+  right: 10px;
+  top: 45%;
 }
 .body-container .item-container hr {
+  border: none;
+  border-top: 1px solid #d8d8d8;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  border: 1px solid;
   margin-left: 10px;
   margin-top: 10px;
   width: 100%;
@@ -215,50 +216,50 @@ body {
   padding-top: 20px;
 }
 .body-container .item-container .total-container .total-content {
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: end;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
 }
 .body-container .item-container .total-container .total-content .total-text {
+  font-weight: bold;
   position: relative;
   right: 50px;
-  font-weight: bold;
 }
 .body-container .item-container .total-container .total-content .total-sum {
+  font-weight: bold;
+  padding-right: 2px;
   position: relative;
   right: 5px;
-  padding-right: 2px;
-  font-weight: bold;
 }
 .body-container .item-container .button-container {
-  padding-top: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: end;
+  padding-top: 30px;
 }
 .body-container .item-container .button-container .button-content {
   position: relative;
 }
 .body-container .item-container .button-container .button-content .back-btn {
-  outline: 2px solid #dbdbdb;
-  background-color: white;
-  color: #777777;
-  height: 25px;
-  width: 125px;
+  background-color: #fff;
+  color: #555555;
   font-weight: bold;
+  height: 25px;
+  outline: 2px solid #d8d8d8;
+  width: 125px;
 }
 .body-container .item-container .button-container .button-content .checkout-btn {
-  position: relative;
-  left: 15px;
   background-color: #6fce96;
-  color: white;
-  height: 25px;
-  width: 125px;
   font-weight: bold;
+  color: #fff;
+  height: 25px;
+  left: 15px;
+  position: relative;
+  width: 125px;
 }
