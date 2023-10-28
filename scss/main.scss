@@ -84,9 +84,11 @@ body {
 
             .coupon-heart {
               align-items: center;
+              color: #{variables.$text-color};
+              cursor: pointer;
               display: flex;
               flex-direction: column;
-              justify-content: center
+              justify-content: center;
             }
 
             .brief-description {
@@ -135,7 +137,6 @@ body {
     }
   }
 }
-
 
   #go-top-btn-content {
     bottom: 5%;
