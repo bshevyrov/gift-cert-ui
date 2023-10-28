@@ -326,3 +326,18 @@ body {
   outline: 2px solid #d8d8d8;
   width: 80px;
 }
+
+#go-top-btn-content {
+  bottom: 5%;
+  color: #555555;
+  cursor: pointer;
+  display: none;
+  font-size: 62px;
+  opacity: 30%;
+  position: fixed;
+  right: 5%;
+  z-index: 99;
+}
+#go-top-btn-content:hover {
+  opacity: 100%;
+}

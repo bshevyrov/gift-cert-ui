@@ -137,4 +137,23 @@ body {
 }
 
 
+  #go-top-btn-content {
+    bottom: 5%;
+    color: #{variables.$text-color};
+    cursor: pointer;
+    display: none;
+    font-size: 62px;
+    opacity: 30%;
+    position: fixed;
+    right: 5%;
+    z-index: 99;
+
+    &:hover {
+      opacity: 100%;
+    }
+  }
+
+
+
+
 
