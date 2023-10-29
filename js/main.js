@@ -198,23 +198,89 @@ function debounce(func, delay = 1000) {
 }
 
 function search(searchValue) {
-    let searchQuery = searchValue.target.value;
-    let localData = getDataFromLocalStorage();
-    let rls = [];
-    if (!searchQuery) {
-        createBody(localData);
-    }
-    for (const arrElement of localData) {
-        let tags = arrElement.get("tag");
-        for (const tag of tags) {
+    let searchQuery = document.getElementById("input-field").value;
+    let category = document.getElementById("search-select").value;
 
-            if (new String(tag.name).indexOf(searchQuery) !== -1) {
-                rls.push(arrElement);
-                break;
+    // let searchQuery = searchValue.target.value;
+    let localData = getDataFromLocalStorage();
+    if (!searchQuery) {
+        return;
+        // createBody(localData);
+
+    }
+    switch (category) {
+        case "tag":
+            searchTag(searchQuery);
+            break;
+        case "description":
+            searchDescription(searchQuery);
+            break;
+        case "name":
+            searchName(searchQuery);
+            break;
+        case "all":
+            searchAll(searchQuery);
+            break;
+        default:
+            break;
+    }
+
+    function searchTag(searchValue) {
+        let rls = [];
+        for (const arrElement of localData) {
+            let tags = arrElement.get("tag");
+            for (const tag of tags) {
+                if (new String(tag.name).indexOf(searchValue) !== -1) {
+                    rls.push(arrElement);
+                    console.log(searchValue);
+                    break;
+                }
             }
         }
+        createBody(rls)
     }
-    createBody(rls)
+
+    function searchName(searchValue) {
+        let rls = [];
+        for (const arrElement of localData) {
+            let name = arrElement.get("name");
+            if (new String(name).indexOf(searchValue) !== -1) {
+                rls.push(arrElement);
+            }
+        }
+        createBody(rls)
+    }
+
+    function searchDescription(searchValue) {
+        let rls = [];
+        for (const arrElement of localData) {
+            let desc = arrElement.get("description");
+            if (desc.indexOf(searchValue) !== -1) {
+                rls.push(arrElement);
+            }
+        }
+        createBody(rls)
+    }
+
+    function searchAll(searchValue) {
+        let rls = [];
+        for (const arrElement of localData) {
+            let desc = arrElement.get("description");
+            let name = arrElement.get("name");
+
+            if (new String(name).indexOf(searchValue) !== -1 || new String(desc).indexOf(searchValue) !== -1) {
+                rls.push(arrElement);
+            }
+            let tags = arrElement.get("tag");
+            for (const tag of tags) {
+                if (new String(tag.name).indexOf(searchValue) !== -1) {
+                    rls.push(arrElement);
+                    break;
+                }
+            }
+        }
+        createBody(rls)
+    }
 }
 
 function getDifferenceInDays(created, duration) {
