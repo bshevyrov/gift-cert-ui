@@ -166,8 +166,8 @@ body {
 }
 .category-panel-container .category-container .category-image {
   background-color: #fff;
-  height: 50px;
-  width: 50px;
+  height: 100px;
+  width: 100px;
 }
 .category-panel-container .category-container .category-name {
   color: #555555;
@@ -215,7 +215,6 @@ body {
   border-top: 1px solid #d8d8d8;
 }
 .category-body-container .coupon-row-container .coupon-column-content .coupon-container .coupon-content .coupon-row {
-  padding-top: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -225,8 +224,13 @@ body {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .category-body-container .coupon-row-container .coupon-column-content .coupon-container .coupon-content .coupon-row .coupon-name {
   -webkit-box-align: center;
@@ -242,6 +246,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding-left: 0;
 }
 .category-body-container .coupon-row-container .coupon-column-content .coupon-container .coupon-content .coupon-row .coupon-heart {
   -webkit-box-align: center;
