@@ -3,8 +3,14 @@
 Storage.prototype.getObj = function (key) {
     return JSON.parse(this.getItem(key))
 }
-document.addEventListener("DOMContentLoaded", createCategoryPanel);
+// Date.prototype.addDays = function(days) {
+//     var date = new Date(this.valueOf());
+//     date.setDate(date.getDate() + days);
+//     return date;
+// }
+
 document.addEventListener("DOMContentLoaded", createBody);
+document.addEventListener("DOMContentLoaded", createCategoryPanel);
 let localData = getDataFromLocalStorage();
 
 let page = 0;
@@ -36,7 +42,29 @@ function getTags() {
     }
     return uniqTags;
 }
-
+// function getCarts() {
+//     let uniqCarts = [];
+//     // let filteredStrings = new Set();
+//     // for (const dataElement of localData) {
+//     //     let arr = new Array(new Map(dataElement).get("tag")).pop();
+//     //
+//     //     for (const arrElement of arr) {
+//     //         if (!filteredStrings.has(JSON.stringify(arrElement))) {
+//     //             filteredStrings.add(JSON.stringify(arrElement));
+//     //         }
+//     //     }
+//     // }
+//     for (const dataElement of localData) {
+//         // let rsl = JSON.parse(arrElement);
+//         // let currentElement = new Map(Object.entries(rsl));
+//         const cartObj = {
+//             id: dataElement.get().get("id"),
+//             name: currentElement.get("name")
+//         }
+//         uniqCarts.push(cartObj);
+//     }
+//     return uniqCarts;
+// }
 
 function getDataFromLocalStorage() {
     let rsl = [];
@@ -57,16 +85,17 @@ function getDataFromLocalStorage() {
 }
 
 
-function createCategoryPanel() {
-
+function createBody  () {
     let body = document.getElementById('category-body-container');
-    // body.innerHTML = "";
-    //let rowDiv = document.createElement('div');
+
+    // console.log(body);
+    body.innerHTML = "";
+    let rowDiv = document.createElement('div');
     let couponRowContainerDiv;
     for (let i = 0; i < localData.length; i++) {
-        if (i !== 1 || i % 3 === 0) {
+        if ( i===0 ||i % 3===0) {
             couponRowContainerDiv = document.createElement('div');
-            couponRowContainerDiv.className = 'category-container';
+            couponRowContainerDiv.className = 'coupon-row-container';
             body.appendChild(couponRowContainerDiv);
         }
 
@@ -92,14 +121,16 @@ function createCategoryPanel() {
 
         let couponNameDiv = document.createElement('div');
         couponNameDiv.className = 'coupon-name';
+        couponNameDiv.textContent = new Map(localData[i]).get("name");
         couponRowDiv.appendChild(couponNameDiv);
 
         let couponHeartDiv = document.createElement('div');
-        couponNameDiv.className = 'coupon-heart';
+        couponHeartDiv.className = 'coupon-heart';
         couponRowDiv.appendChild(couponHeartDiv);
 
         let heartSpan = document.createElement('span');
         heartSpan.className = 'material-icons-outlined';
+        heartSpan.textContent = " favorite ";
         heartSpan.addEventListener("click", colorChangeFunction);
         couponHeartDiv.appendChild(heartSpan);
 
@@ -109,10 +140,13 @@ function createCategoryPanel() {
 
         let briefDescrDiv = document.createElement('div');
         briefDescrDiv.className = 'brief-description';
+        briefDescrDiv.textContent = new String(new Map(localData[i]).get("description")).substring(0,70)+"...";
         couponRowDiv.appendChild(briefDescrDiv);
 
         let expireDateDiv = document.createElement('div');
         expireDateDiv.className = 'expire-date';
+        expireDateDiv.textContent ="Expired in "+(getDifferenceInDays(new Map(localData[i]).get("created"),
+            new Map(localData[i]).get("duration")));
         couponRowDiv.appendChild(expireDateDiv);
 
         let hrElement = document.createElement('hr');
@@ -124,6 +158,7 @@ function createCategoryPanel() {
 
         let couponPriceDiv = document.createElement('div');
         couponPriceDiv.className = 'coupon-price';
+        couponPriceDiv.textContent ="$"+new Map(localData[i]).get("price");
         couponRowDiv.appendChild(couponPriceDiv);
 
         let cartBtnDiv = document.createElement('div');
@@ -139,10 +174,18 @@ function createCategoryPanel() {
     }
 }
 
-function createBody() {
+
+function getDifferenceInDays(created,duration) {
+    const date2 = addDays(created,duration).valueOf();
+    const date1 = new Date().valueOf();
+    const diffTime = Math.abs(date2 - date1);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    return diffDays;
+}
+function createCategoryPanel   () {
     let tags = getTags();
     let panel = document.getElementById('category-panel-container');
-    panel.innerHTML = "";
+    // panel.innerHTML = "";
     for (const tagsElement of tags) {
         let iDiv = document.createElement('div');
 
@@ -160,5 +203,8 @@ function createBody() {
         iDiv.appendChild(innerNameDiv);
     }
 }
-
-console.log(getTags());
+function addDays(date, days) {
+    var result = new Date(date);
+    result.setDate(result.getDate() + days);
+    return result;
+}

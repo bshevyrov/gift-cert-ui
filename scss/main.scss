@@ -41,14 +41,16 @@ body {
 }
 
 .category-body-container {
-  padding-top: 20px;
+  padding-top: 40px;
 
   .coupon-row-container {
     flex-direction: row;
     flex-wrap: wrap;
+    column-gap: 6%;
     display: flex;
-    justify-content: space-around;
-    margin-bottom: 30px;
+    //justify-content: space-around;
+    justify-content: center;
+    padding-bottom: 6%;
 
     .coupon-column-content {
       background-color: #{variables.$second-color};
@@ -58,8 +60,8 @@ body {
       .coupon-container {
         .coupon-image {
           background-color: #{variables.$outline-color};
-          height: 150px;
-          width: 150px;
+          height: 200px;
+          width: 200px;
         }
 
         .coupon-content {
@@ -95,15 +97,20 @@ body {
               align-items: center;
               display: flex;
               flex-direction: column;
-              font-size: 8px;
+              font-size: 10px;
               justify-content: center;
+              //white-space: nowrap;
+              width: 120px;
+              overflow: hidden;
+              text-overflow: ellipsis;
             }
+
 
             .expire-date {
               align-items: center;
               display: flex;
               flex-direction: column;
-              font-size: 6px;
+              font-size: 8px;
               justify-content: center;
             }
 

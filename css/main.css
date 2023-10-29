@@ -175,7 +175,7 @@ body {
 }
 
 .category-body-container {
-  padding-top: 20px;
+  padding-top: 40px;
 }
 .category-body-container .coupon-row-container {
   -webkit-box-orient: horizontal;
@@ -184,12 +184,16 @@ body {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-column-gap: 6%;
+     -moz-column-gap: 6%;
+          column-gap: 6%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  margin-bottom: 30px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-bottom: 6%;
 }
 .category-body-container .coupon-row-container .coupon-column-content {
   background-color: #fff;
@@ -203,8 +207,8 @@ body {
 }
 .category-body-container .coupon-row-container .coupon-column-content .coupon-container .coupon-image {
   background-color: #d8d8d8;
-  height: 150px;
-  width: 150px;
+  height: 200px;
+  width: 200px;
 }
 .category-body-container .coupon-row-container .coupon-column-content .coupon-container .coupon-content hr {
   border: none;
@@ -267,10 +271,13 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  font-size: 8px;
+  font-size: 10px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .category-body-container .coupon-row-container .coupon-column-content .coupon-container .coupon-content .coupon-row .expire-date {
   -webkit-box-align: center;
@@ -283,7 +290,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  font-size: 6px;
+  font-size: 8px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
