@@ -26,8 +26,6 @@ body {
     justify-content: center;
     padding-top: 20px;
     padding-bottom: 10px;
-    //pointer-events: none;
-
 
     .category-image {
       align-items: center;
@@ -36,8 +34,6 @@ body {
       justify-content: center;
       height: 100px;
       width: 100px;
-      //pointer-events: none;
-
 
       .name-image-div {
         background-color: #{variables.$text-color};
@@ -46,7 +42,6 @@ body {
         padding-right: 5px;
         text-overflow: ellipsis;
         width: min-content;
-
       }
     }
 
@@ -65,7 +60,6 @@ body {
     flex-wrap: wrap;
     column-gap: 6%;
     display: flex;
-    //justify-content: space-around;
     justify-content: center;
     padding-bottom: 6%;
 
@@ -181,8 +175,6 @@ body {
     opacity: 100%;
   }
 }
-
-
 
 
 /* loader */

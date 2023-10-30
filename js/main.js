@@ -1,38 +1,46 @@
-'use strict';
+"use strict";
 
 Storage.prototype.getObj = function (key) {
     return JSON.parse(this.getItem(key))
 }
-// Date.prototype.addDays = function(days) {
-//     var date = new Date(this.valueOf());
-//     date.setDate(date.getDate() + days);
-//     return date;
-// }
+Storage.prototype.setObj = function (key, obj) {
+    return this.setItem(key, JSON.stringify(obj))
+}
 
+window.onscroll = function () {
+    displayFunction()
+};
 
 let localData = getDataFromLocalStorage();
-let body = document.getElementById('category-body-container');
+let body = document.getElementById("category-body-container");
 let page = 9;
+let goTopButton;
+let currentPosition = 0;
+const findGoToTopBtn = () => {
+    goTopButton = document.getElementById("go-top-btn-content");
+};
+const searchVar = () => search();
+const debouncedSearchVar = debounce(searchVar);
 
-function getPageContent() {
+const addBodyVar = () => addBody();
 
-}
+const debouncedAddBodyVar = debounce(addBodyVar);
 
 function createCategoryPanel() {
     let tags = getTags(getDataFromLocalStorage());
-    let panel = document.getElementById('category-panel-container');
+    let panel = document.getElementById("category-panel-container");
 
     // panel.innerHTML = "";
     for (const tagsElement of tags) {
-        let iDiv = document.createElement('div');
+        let iDiv = document.createElement("div");
 
-        iDiv.className = 'category-container';
+        iDiv.className = "category-container";
         iDiv.addEventListener("click", () => {
             searchTag(tagsElement.name)
         });
         panel.appendChild(iDiv);
 
-        let innerImageDiv = document.createElement('div');
+        let innerImageDiv = document.createElement("div");
         innerImageDiv.addEventListener("mouseover", (e) => {
             showName(e.target.children[0])
         });
@@ -42,7 +50,7 @@ function createCategoryPanel() {
         innerImageDiv.className = "category-image";
         iDiv.appendChild(innerImageDiv);
 
-        let nameDiv = document.createElement('div');
+        let nameDiv = document.createElement("div");
         nameDiv.textContent = tagsElement.name;
         nameDiv.className = "name-image-div";
         nameDiv.addEventListener("mouseover", (e) => {
@@ -53,23 +61,20 @@ function createCategoryPanel() {
         });
         innerImageDiv.appendChild(nameDiv);
 
-        let innerNameDiv = document.createElement('div');
+        let innerNameDiv = document.createElement("div");
         innerNameDiv.className = "category-name";
         innerNameDiv.textContent = tagsElement.name;
         iDiv.appendChild(innerNameDiv);
     }
 
     function showName(e) {
-        console.log(e);
         e.style.display = "block";
     }
 
     function hideName(e) {
-        console.log(e);
         e.style.display = "none";
     }
 }
-
 
 function getTags(data) {
     let uniqTags = [];
@@ -114,95 +119,93 @@ function getDataFromLocalStorage() {
 }
 
 function createInitialBody() {
-    let data = getDataFromLocalStorage().slice(0,page);
+    let data = getDataFromLocalStorage().slice(0, page);
     createBody(data);
 }
 
-
 function createBody(data, clear = true) {
-    let body = document.getElementById('category-body-container');
+    let body = document.getElementById("category-body-container");
 
-    // console.log(body);
     if (clear) {
         body.innerHTML = "";
     }
-    // let rowDiv = document.createElement('div');
+
     let couponRowContainerDiv;
     for (let i = 0; i < data.length; i++) {
         if (i === 0 || i % 3 === 0) {
-            couponRowContainerDiv = document.createElement('div');
-            couponRowContainerDiv.className = 'coupon-row-container';
+            couponRowContainerDiv = document.createElement("div");
+            couponRowContainerDiv.className = "coupon-row-container";
             body.appendChild(couponRowContainerDiv);
         }
 
-        let couponColumnContentDiv = document.createElement('div');
-        couponColumnContentDiv.className = 'coupon-column-content';
+        let couponColumnContentDiv = document.createElement("div");
+        couponColumnContentDiv.className = "coupon-column-content";
         couponRowContainerDiv.appendChild(couponColumnContentDiv);
 
-        let couponContainerDiv = document.createElement('div');
-        couponContainerDiv.className = 'coupon-container';
+        let couponContainerDiv = document.createElement("div");
+        couponContainerDiv.className = "coupon-container";
         couponColumnContentDiv.appendChild(couponContainerDiv);
 
-        let couponImageDiv = document.createElement('div');
-        couponImageDiv.className = 'coupon-image';
+        let couponImageDiv = document.createElement("div");
+        couponImageDiv.className = "coupon-image";
         couponContainerDiv.appendChild(couponImageDiv);
 
-        let couponContentDiv = document.createElement('div');
-        couponContentDiv.className = 'coupon-content';
+        let couponContentDiv = document.createElement("div");
+        couponContentDiv.className = "coupon-content";
         couponContainerDiv.appendChild(couponContentDiv);
 
-        let couponRowDiv = document.createElement('div');
-        couponRowDiv.className = 'coupon-row';
+        let couponRowDiv = document.createElement("div");
+        couponRowDiv.className = "coupon-row";
         couponContentDiv.appendChild(couponRowDiv);
 
-        let couponNameDiv = document.createElement('div');
-        couponNameDiv.className = 'coupon-name';
+        let couponNameDiv = document.createElement("div");
+        couponNameDiv.className = "coupon-name";
         couponNameDiv.textContent = new Map(data[i]).get("name");
         couponRowDiv.appendChild(couponNameDiv);
 
-        let couponHeartDiv = document.createElement('div');
-        couponHeartDiv.className = 'coupon-heart';
+        let couponHeartDiv = document.createElement("div");
+        couponHeartDiv.className = "coupon-heart";
         couponRowDiv.appendChild(couponHeartDiv);
 
-        let heartSpan = document.createElement('span');
-        heartSpan.className = 'material-icons-outlined';
+        let heartSpan = document.createElement("span");
+        heartSpan.className = "material-icons-outlined";
         heartSpan.textContent = " favorite ";
         heartSpan.addEventListener("click", colorChangeFunction);
         couponHeartDiv.appendChild(heartSpan);
 
-        couponRowDiv = document.createElement('div');
-        couponRowDiv.className = 'coupon-row';
+        couponRowDiv = document.createElement("div");
+        couponRowDiv.className = "coupon-row";
         couponContentDiv.appendChild(couponRowDiv);
 
-        let briefDescrDiv = document.createElement('div');
-        briefDescrDiv.className = 'brief-description';
+        let briefDescrDiv = document.createElement("div");
+        briefDescrDiv.className = "brief-description";
         briefDescrDiv.textContent = new String(new Map(data[i]).get("description")).substring(0, 70) + "...";
         couponRowDiv.appendChild(briefDescrDiv);
 
-        let expireDateDiv = document.createElement('div');
-        expireDateDiv.className = 'expire-date';
+        let expireDateDiv = document.createElement("div");
+        expireDateDiv.className = "expire-date";
         expireDateDiv.textContent = "Expired in " + (getDifferenceInDays(new Map(data[i]).get("created"),
             new Map(localData[i]).get("duration")));
         couponRowDiv.appendChild(expireDateDiv);
 
-        let hrElement = document.createElement('hr');
+        let hrElement = document.createElement("hr");
         couponContentDiv.appendChild(hrElement);
 
-        couponRowDiv = document.createElement('div');
-        couponRowDiv.className = 'coupon-row';
+        couponRowDiv = document.createElement("div");
+        couponRowDiv.className = "coupon-row";
         couponContentDiv.appendChild(couponRowDiv);
 
-        let couponPriceDiv = document.createElement('div');
-        couponPriceDiv.className = 'coupon-price';
+        let couponPriceDiv = document.createElement("div");
+        couponPriceDiv.className = "coupon-price";
         couponPriceDiv.textContent = "$" + new Map(data[i]).get("price");
         couponRowDiv.appendChild(couponPriceDiv);
 
-        let cartBtnDiv = document.createElement('div');
-        cartBtnDiv.className = 'add-to-cart-btn';
+        let cartBtnDiv = document.createElement("div");
+        cartBtnDiv.className = "add-to-cart-btn";
         couponRowDiv.appendChild(cartBtnDiv);
 
-        let addToCartBtn = document.createElement('button');
-        addToCartBtn.className = 'add-to-cart-btn';
+        let addToCartBtn = document.createElement("button");
+        addToCartBtn.className = "add-to-cart-btn";
         addToCartBtn.type = "button";
         addToCartBtn.textContent = "Add to Cart";
         cartBtnDiv.appendChild(addToCartBtn);
@@ -210,21 +213,7 @@ function createBody(data, clear = true) {
     }
 }
 
-
-// const ss = ()=> {
-//     debounce(search);
-// }
-
-// function debounce(func, timeout = 5000) {
-//     console.log("inn");
-//     let timer;
-//     return (...args) => {
-//         clearTimeout(timer);
-//         timer = setTimeout(() => { func.apply(this, args); }, timeout);
-//     };
-// }
-// const debounce = (callback, wait) => {
-     function debounce(callback, wait = 5000) {
+function debounce(callback, wait = 1500) {
     let timeoutId = null;
     return (...args) => {
         window.clearTimeout(timeoutId);
@@ -234,18 +223,15 @@ function createBody(data, clear = true) {
     };
 }
 
-const storageEventCb = () => search();
-
 function search() {
     let searchQuery = document.getElementById("input-field").value;
     let category = document.getElementById("search-select").value;
-
-    // let searchQuery = searchValue.target.value;
     let localData = getDataFromLocalStorage();
-    if (!searchQuery) {
-        return;
-        // createBody(localData);
 
+    if (!searchQuery) {
+        page=9;
+        createInitialBody();
+        return;
     }
     switch (category) {
         case "tag":
@@ -263,7 +249,6 @@ function search() {
         default:
             break;
     }
-
 
     function searchName(searchValue) {
         let rls = [];
@@ -288,28 +273,30 @@ function search() {
     }
 
     function searchAll(searchValue) {
-        let rls = [];
+        let rsl = [];
         for (const arrElement of localData) {
             let desc = arrElement.get("description");
             let name = arrElement.get("name");
 
-            if (new String(name).toLowerCase().indexOf(searchValue.toLowerCase()) !== -1 || new String(desc).toLowerCase().indexOf(searchValue.toLowerCase()) !== -1) {
-                rls.push(arrElement);
+            if (new String(name).toLowerCase().indexOf(searchValue.toLowerCase()) !== -1
+                || new String(desc).toLowerCase().indexOf(searchValue.toLowerCase()) !== -1) {
+                if (rsl.indexOf(arrElement)===-1) {
+                    rsl.push(arrElement);
+                }
             }
             let tags = arrElement.get("tag");
             for (const tag of tags) {
                 if (new String(tag.name).indexOf(searchValue) !== -1) {
-                    rls.push(arrElement);
+                    if (rsl.indexOf(arrElement)===-1) {
+                        rsl.push(arrElement);
+                    }
                     break;
                 }
             }
         }
-        createBody(rls)
+        createBody(rsl);
     }
 }
-const debouncedCb = debounce(storageEventCb, 1500);
-
-document.addEventListener('input',debouncedCb);
 
 function searchTag(searchValue) {
     let rls = [];
@@ -340,17 +327,6 @@ function addDays(date, days) {
     return result;
 }
 
-document.addEventListener("DOMContentLoaded", createInitialBody);
-document.addEventListener("DOMContentLoaded", createCategoryPanel);
-
-
-let goTopButton;
-let currentPosition = 0;
-
-window.onscroll = function () {
-    displayFunction()
-};
-
 function displayFunction() {
     if (document.documentElement.scrollTop > 20 && currentPosition === 0) {
         goTopButton.style.display = "flex";
@@ -365,27 +341,16 @@ function displayFunction() {
     }
 
     if (document.documentElement.scrollTop + document.documentElement.clientHeight >= document.documentElement.scrollHeight - 5) {
-dd();
-//    showLoader();
-     //  throttle(addBody,10);
-        // debounce(addBody(),10000);
-        // hideLoader();
-
+        debouncedAddBodyVar();
     }
 }
-const cc = ()=>     addBody();
-
-const dd =    debounce(cc,1300);
-
 
 function addBody() {
-    console.log("111");
-    let newPage = page+3;
-    let currentData = getDataFromLocalStorage().slice(page,newPage);
-    page=newPage;
-    createBody(currentData,false);
+    let newPage = page + 3;
+    let currentData = getDataFromLocalStorage().slice(page, newPage);
+    page = newPage;
+    createBody(currentData, false);
 }
-
 
 function scrollFunction() {
     if (currentPosition === 0) {
@@ -397,60 +362,19 @@ function scrollFunction() {
     }
 }
 
-
 function colorChangeFunction(e) {
     let heartBtn = e.target;
-    if (heartBtn.style.color === "red") {
-        heartBtn.style.color = "#555555";
-    } else {
+    if (heartBtn.style.color !== "red") {
         heartBtn.style.color = "red";
+    } else {
+        heartBtn.style.color = "#555555";
     }
 }
 
-//
-const ff = () => {
-    goTopButton = document.getElementById("go-top-btn-content");
-    // loader = document.querySelector('.loader');
-};
-document.addEventListener("DOMContentLoaded", ff);
-// console.log(document.getElementById("go-top-btn-container"))
-//
-function throttle (callback, limit) {
-    console.log("out");
-    let waiting = false;                      // Initially, we're not waiting
-    return function () {
-        console.log("out");// We return a throttled function
-        if (!waiting) {                       // If we're not waiting
-            callback.apply(this, arguments);  // Execute users function
-            waiting = true;                   // Prevent future invocations
-            setTimeout(function () {          // After a period of time
-                waiting = false;              // And allow future invocations
-            }, limit);
-        }
-    }
-}
-//
-// function throttle(func, timeFrame) {
-//     let lastTime = 0;
-//     console.log("mid1");
-//     return function () {
-//         let now = Date.now();
-//         if (now - lastTime >= timeFrame) {
-//             func();
-//             console.log("mid");
-//             lastTime = now;
-//         }
-//     };
-// }
+
+document.addEventListener("DOMContentLoaded", findGoToTopBtn);
+document.addEventListener("input", debouncedSearchVar);
+document.addEventListener("DOMContentLoaded", createInitialBody);
+document.addEventListener("DOMContentLoaded", createCategoryPanel);
 
 
-// const hideLoader = () => {
-//     loader.classList.remove('show');
-// };
-//
-// const showLoader = () => {
-//     console.log("show");
-//     loader.classList.add('show');
-// };
-//
-// let loader ;
