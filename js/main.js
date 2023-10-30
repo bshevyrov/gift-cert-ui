@@ -12,8 +12,7 @@ Storage.prototype.getObj = function (key) {
 
 let localData = getDataFromLocalStorage();
 let body = document.getElementById('category-body-container');
-
-let page = 0;
+let page = 9;
 
 function getPageContent() {
 
@@ -28,23 +27,30 @@ function createCategoryPanel() {
         let iDiv = document.createElement('div');
 
         iDiv.className = 'category-container';
-        iDiv.addEventListener("click", ()=>{searchTag(tagsElement.name)});
-        // iDiv.addEventListener("mouseover",(e)=>{showName(e)});
-        // iDiv.addEventListener("mouseout", (e)=>{hideName(e)});
+        iDiv.addEventListener("click", () => {
+            searchTag(tagsElement.name)
+        });
         panel.appendChild(iDiv);
 
         let innerImageDiv = document.createElement('div');
-        // innerImageDiv.addEventListener("hover",(e)=>{showName(e)});
-        innerImageDiv.addEventListener("mouseover",(e)=>{showName(e.target.children[0])});
-        innerImageDiv.addEventListener("mouseout", (e)=>{hideName(e.target.children[0])});
+        innerImageDiv.addEventListener("mouseover", (e) => {
+            showName(e.target.children[0])
+        });
+        innerImageDiv.addEventListener("mouseout", (e) => {
+            hideName(e.target.children[0])
+        });
         innerImageDiv.className = "category-image";
         iDiv.appendChild(innerImageDiv);
 
         let nameDiv = document.createElement('div');
         nameDiv.textContent = tagsElement.name;
         nameDiv.className = "name-image-div";
-        nameDiv.addEventListener("mouseover",(e)=>{showName(e.target)});
-        nameDiv.addEventListener("mouseout", (e)=>{hideName(e.target)});
+        nameDiv.addEventListener("mouseover", (e) => {
+            showName(e.target)
+        });
+        nameDiv.addEventListener("mouseout", (e) => {
+            hideName(e.target)
+        });
         innerImageDiv.appendChild(nameDiv);
 
         let innerNameDiv = document.createElement('div');
@@ -52,13 +58,15 @@ function createCategoryPanel() {
         innerNameDiv.textContent = tagsElement.name;
         iDiv.appendChild(innerNameDiv);
     }
+
     function showName(e) {
         console.log(e);
-       e.style.display="block";
+        e.style.display = "block";
     }
+
     function hideName(e) {
         console.log(e);
-        e.style.display="none";
+        e.style.display = "none";
     }
 }
 
@@ -106,16 +114,18 @@ function getDataFromLocalStorage() {
 }
 
 function createInitialBody() {
-    let data = getDataFromLocalStorage();
+    let data = getDataFromLocalStorage().slice(0,page);
     createBody(data);
 }
 
 
-function createBody(data) {
+function createBody(data, clear = true) {
     let body = document.getElementById('category-body-container');
 
     // console.log(body);
-    body.innerHTML = "";
+    if (clear) {
+        body.innerHTML = "";
+    }
     // let rowDiv = document.createElement('div');
     let couponRowContainerDiv;
     for (let i = 0; i < data.length; i++) {
@@ -201,17 +211,31 @@ function createBody(data) {
 }
 
 
-document.addEventListener("input", debounce(search));
+// const ss = ()=> {
+//     debounce(search);
+// }
 
-function debounce(func, delay = 1000) {
-    let timeout;
-    return function () {
-        const context = this;
-        const args = arguments;
-        clearTimeout(timeout);
-        timeout = setTimeout(() => func.apply(context, args), delay);
+// function debounce(func, timeout = 5000) {
+//     console.log("inn");
+//     let timer;
+//     return (...args) => {
+//         clearTimeout(timer);
+//         timer = setTimeout(() => { func.apply(this, args); }, timeout);
+//     };
+// }
+// const debounce = (callback, wait) => {
+     function debounce(callback, wait = 5000) {
+    let timeoutId = null;
+    return (...args) => {
+        window.clearTimeout(timeoutId);
+        timeoutId = window.setTimeout(() => {
+            callback.apply(null, args);
+        }, wait);
     };
 }
+
+const storageEventCb = () => search();
+
 function search() {
     let searchQuery = document.getElementById("input-field").value;
     let category = document.getElementById("search-select").value;
@@ -245,7 +269,7 @@ function search() {
         let rls = [];
         for (const arrElement of localData) {
             let name = arrElement.get("name");
-            if (new String(name).indexOf(searchValue) !== -1) {
+            if (new String(name).toLowerCase().indexOf(searchValue.toLowerCase()) !== -1) {
                 rls.push(arrElement);
             }
         }
@@ -256,7 +280,7 @@ function search() {
         let rls = [];
         for (const arrElement of localData) {
             let desc = arrElement.get("description");
-            if (desc.indexOf(searchValue) !== -1) {
+            if (desc.toLowerCase().indexOf(searchValue.toLowerCase()) !== -1) {
                 rls.push(arrElement);
             }
         }
@@ -269,7 +293,7 @@ function search() {
             let desc = arrElement.get("description");
             let name = arrElement.get("name");
 
-            if (new String(name).indexOf(searchValue) !== -1 || new String(desc).indexOf(searchValue) !== -1) {
+            if (new String(name).toLowerCase().indexOf(searchValue.toLowerCase()) !== -1 || new String(desc).toLowerCase().indexOf(searchValue.toLowerCase()) !== -1) {
                 rls.push(arrElement);
             }
             let tags = arrElement.get("tag");
@@ -283,13 +307,16 @@ function search() {
         createBody(rls)
     }
 }
+const debouncedCb = debounce(storageEventCb, 1500);
+
+document.addEventListener('input',debouncedCb);
 
 function searchTag(searchValue) {
     let rls = [];
     for (const arrElement of localData) {
         let tags = arrElement.get("tag");
         for (const tag of tags) {
-            if (new String(tag.name).indexOf(searchValue) !== -1) {
+            if (new String(tag.name).toLowerCase().indexOf(new String(searchValue).toLowerCase()) !== -1) {
                 rls.push(arrElement);
                 console.log(searchValue);
                 break;
@@ -315,3 +342,115 @@ function addDays(date, days) {
 
 document.addEventListener("DOMContentLoaded", createInitialBody);
 document.addEventListener("DOMContentLoaded", createCategoryPanel);
+
+
+let goTopButton;
+let currentPosition = 0;
+
+window.onscroll = function () {
+    displayFunction()
+};
+
+function displayFunction() {
+    if (document.documentElement.scrollTop > 20 && currentPosition === 0) {
+        goTopButton.style.display = "flex";
+        goTopButton.style.top = "";
+        goTopButton.style.bottom = "5%";
+    } else if (document.documentElement.scrollTop < 20 && currentPosition === 0) {
+        goTopButton.style.display = "none";
+    }
+    if (currentPosition !== 0) {
+        goTopButton.style.bottom = "";
+        goTopButton.style.top = "15%";
+    }
+
+    if (document.documentElement.scrollTop + document.documentElement.clientHeight >= document.documentElement.scrollHeight - 5) {
+dd();
+//    showLoader();
+     //  throttle(addBody,10);
+        // debounce(addBody(),10000);
+        // hideLoader();
+
+    }
+}
+const cc = ()=>     addBody();
+
+const dd =    debounce(cc,1300);
+
+
+function addBody() {
+    console.log("111");
+    let newPage = page+3;
+    let currentData = getDataFromLocalStorage().slice(page,newPage);
+    page=newPage;
+    createBody(currentData,false);
+}
+
+
+function scrollFunction() {
+    if (currentPosition === 0) {
+        currentPosition = document.documentElement.scrollTop;
+        document.documentElement.scrollTop = 0;
+    } else {
+        document.documentElement.scrollTop = currentPosition;
+        currentPosition = 0;
+    }
+}
+
+
+function colorChangeFunction(e) {
+    let heartBtn = e.target;
+    if (heartBtn.style.color === "red") {
+        heartBtn.style.color = "#555555";
+    } else {
+        heartBtn.style.color = "red";
+    }
+}
+
+//
+const ff = () => {
+    goTopButton = document.getElementById("go-top-btn-content");
+    // loader = document.querySelector('.loader');
+};
+document.addEventListener("DOMContentLoaded", ff);
+// console.log(document.getElementById("go-top-btn-container"))
+//
+function throttle (callback, limit) {
+    console.log("out");
+    let waiting = false;                      // Initially, we're not waiting
+    return function () {
+        console.log("out");// We return a throttled function
+        if (!waiting) {                       // If we're not waiting
+            callback.apply(this, arguments);  // Execute users function
+            waiting = true;                   // Prevent future invocations
+            setTimeout(function () {          // After a period of time
+                waiting = false;              // And allow future invocations
+            }, limit);
+        }
+    }
+}
+//
+// function throttle(func, timeFrame) {
+//     let lastTime = 0;
+//     console.log("mid1");
+//     return function () {
+//         let now = Date.now();
+//         if (now - lastTime >= timeFrame) {
+//             func();
+//             console.log("mid");
+//             lastTime = now;
+//         }
+//     };
+// }
+
+
+// const hideLoader = () => {
+//     loader.classList.remove('show');
+// };
+//
+// const showLoader = () => {
+//     console.log("show");
+//     loader.classList.add('show');
+// };
+//
+// let loader ;
