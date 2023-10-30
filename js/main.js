@@ -9,8 +9,6 @@ Storage.prototype.getObj = function (key) {
 //     return date;
 // }
 
-document.addEventListener("DOMContentLoaded", createInitialBody);
-document.addEventListener("DOMContentLoaded", createCategoryPanel);
 
 let localData = getDataFromLocalStorage();
 let body = document.getElementById('category-body-container');
@@ -20,6 +18,50 @@ let page = 0;
 function getPageContent() {
 
 }
+
+function createCategoryPanel() {
+    let tags = getTags(getDataFromLocalStorage());
+    let panel = document.getElementById('category-panel-container');
+
+    // panel.innerHTML = "";
+    for (const tagsElement of tags) {
+        let iDiv = document.createElement('div');
+
+        iDiv.className = 'category-container';
+        iDiv.addEventListener("click", ()=>{searchTag(tagsElement.name)});
+        // iDiv.addEventListener("mouseover",(e)=>{showName(e)});
+        // iDiv.addEventListener("mouseout", (e)=>{hideName(e)});
+        panel.appendChild(iDiv);
+
+        let innerImageDiv = document.createElement('div');
+        // innerImageDiv.addEventListener("hover",(e)=>{showName(e)});
+        innerImageDiv.addEventListener("mouseover",(e)=>{showName(e.target.children[0])});
+        innerImageDiv.addEventListener("mouseout", (e)=>{hideName(e.target.children[0])});
+        innerImageDiv.className = "category-image";
+        iDiv.appendChild(innerImageDiv);
+
+        let nameDiv = document.createElement('div');
+        nameDiv.textContent = tagsElement.name;
+        nameDiv.className = "name-image-div";
+        nameDiv.addEventListener("mouseover",(e)=>{showName(e.target)});
+        nameDiv.addEventListener("mouseout", (e)=>{hideName(e.target)});
+        innerImageDiv.appendChild(nameDiv);
+
+        let innerNameDiv = document.createElement('div');
+        innerNameDiv.className = "category-name";
+        innerNameDiv.textContent = tagsElement.name;
+        iDiv.appendChild(innerNameDiv);
+    }
+    function showName(e) {
+        console.log(e);
+       e.style.display="block";
+    }
+    function hideName(e) {
+        console.log(e);
+        e.style.display="none";
+    }
+}
+
 
 function getTags(data) {
     let uniqTags = [];
@@ -45,30 +87,6 @@ function getTags(data) {
     return uniqTags;
 }
 
-// function getCarts() {
-//     let uniqCarts = [];
-//     // let filteredStrings = new Set();
-//     // for (const dataElement of localData) {
-//     //     let arr = new Array(new Map(dataElement).get("tag")).pop();
-//     //
-//     //     for (const arrElement of arr) {
-//     //         if (!filteredStrings.has(JSON.stringify(arrElement))) {
-//     //             filteredStrings.add(JSON.stringify(arrElement));
-//     //         }
-//     //     }
-//     // }
-//     for (const dataElement of localData) {
-//         // let rsl = JSON.parse(arrElement);
-//         // let currentElement = new Map(Object.entries(rsl));
-//         const cartObj = {
-//             id: dataElement.get().get("id"),
-//             name: currentElement.get("name")
-//         }
-//         uniqCarts.push(cartObj);
-//     }
-//     return uniqCarts;
-// }
-
 function getDataFromLocalStorage() {
     let rsl = [];
     let data = new Array(localStorage.getObj("dataArray")).pop();
@@ -89,9 +107,9 @@ function getDataFromLocalStorage() {
 
 function createInitialBody() {
     let data = getDataFromLocalStorage();
-
     createBody(data);
 }
+
 
 function createBody(data) {
     let body = document.getElementById('category-body-container');
@@ -182,10 +200,8 @@ function createBody(data) {
     }
 }
 
-const searchHandle = debounce((e) => search(e));
 
-document.addEventListener("input", searchHandle);
-
+document.addEventListener("input", debounce(search));
 
 function debounce(func, delay = 1000) {
     let timeout;
@@ -196,8 +212,7 @@ function debounce(func, delay = 1000) {
         timeout = setTimeout(() => func.apply(context, args), delay);
     };
 }
-
-function search(searchValue) {
+function search() {
     let searchQuery = document.getElementById("input-field").value;
     let category = document.getElementById("search-select").value;
 
@@ -225,20 +240,6 @@ function search(searchValue) {
             break;
     }
 
-    function searchTag(searchValue) {
-        let rls = [];
-        for (const arrElement of localData) {
-            let tags = arrElement.get("tag");
-            for (const tag of tags) {
-                if (new String(tag.name).indexOf(searchValue) !== -1) {
-                    rls.push(arrElement);
-                    console.log(searchValue);
-                    break;
-                }
-            }
-        }
-        createBody(rls)
-    }
 
     function searchName(searchValue) {
         let rls = [];
@@ -283,6 +284,21 @@ function search(searchValue) {
     }
 }
 
+function searchTag(searchValue) {
+    let rls = [];
+    for (const arrElement of localData) {
+        let tags = arrElement.get("tag");
+        for (const tag of tags) {
+            if (new String(tag.name).indexOf(searchValue) !== -1) {
+                rls.push(arrElement);
+                console.log(searchValue);
+                break;
+            }
+        }
+    }
+    createBody(rls)
+}
+
 function getDifferenceInDays(created, duration) {
     const date2 = addDays(created, duration).valueOf();
     const date1 = new Date().valueOf();
@@ -291,31 +307,11 @@ function getDifferenceInDays(created, duration) {
     return diffDays;
 }
 
-function createCategoryPanel() {
-    let tags = getTags(getDataFromLocalStorage());
-    let panel = document.getElementById('category-panel-container');
-    // panel.innerHTML = "";
-    for (const tagsElement of tags) {
-        let iDiv = document.createElement('div');
-
-        iDiv.className = 'category-container';
-        panel.appendChild(iDiv);
-
-        let innerImageDiv = document.createElement('div');
-        innerImageDiv.className = "category-image";
-
-        iDiv.appendChild(innerImageDiv);
-
-        let innerNameDiv = document.createElement('div');
-        innerNameDiv.className = "category-name";
-        innerNameDiv.textContent = tagsElement.name;
-        iDiv.appendChild(innerNameDiv);
-    }
-}
-
 function addDays(date, days) {
     var result = new Date(date);
     result.setDate(result.getDate() + days);
     return result;
 }
 
+document.addEventListener("DOMContentLoaded", createInitialBody);
+document.addEventListener("DOMContentLoaded", createCategoryPanel);

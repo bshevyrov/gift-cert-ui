@@ -165,9 +165,28 @@ body {
   padding-bottom: 10px;
 }
 .category-panel-container .category-container .category-image {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   height: 100px;
   width: 100px;
+}
+.category-panel-container .category-container .category-image .name-image-div {
+  background-color: #555555;
+  display: none;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-overflow: ellipsis;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
 }
 .category-panel-container .category-container .category-name {
   color: #555555;

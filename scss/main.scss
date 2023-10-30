@@ -26,11 +26,28 @@ body {
     justify-content: center;
     padding-top: 20px;
     padding-bottom: 10px;
+    //pointer-events: none;
+
 
     .category-image {
+      align-items: center;
       background-color: #{variables.$second-color};
+      display: flex;
+      justify-content: center;
       height: 100px;
       width: 100px;
+      //pointer-events: none;
+
+
+      .name-image-div {
+        background-color: #{variables.$text-color};
+        display: none;
+        padding-left: 5px;
+        padding-right: 5px;
+        text-overflow: ellipsis;
+        width: min-content;
+
+      }
     }
 
     .category-name {
